@@ -9,21 +9,56 @@ image.crossOrigin = 'anonymous';
 
 let drawing = false;
 
-canvas.addEventListener('mousedown', () => drawing = true);
-canvas.addEventListener('mouseup', () => {
-  drawing = false;
+function getPos(evt) {
+  const rect = canvas.getBoundingClientRect();
+  if (evt.touches) {
+    return {
+      x: evt.touches[0].clientX - rect.left,
+      y: evt.touches[0].clientY - rect.top
+    };
+  } else {
+    return {
+      x: evt.offsetX,
+      y: evt.offsetY
+    };
+  }
+}
+
+function startDraw(evt) {
+  evt.preventDefault();
+  drawing = true;
+  const pos = getPos(evt);
   ctx.beginPath();
-});
-canvas.addEventListener('mousemove', (e) => {
+  ctx.moveTo(pos.x, pos.y);
+  }
+
+  function draw(evt) {
   if (!drawing) return;
+  evt.preventDefault();
+  const pos = getPos(evt);
   ctx.lineWidth = 2;
   ctx.lineCap = 'round';
   ctx.strokeStyle = 'red';
-  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.lineTo(pos.x, pos.y);
   ctx.stroke();
   ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
-});
+  ctx.moveTo(pos.x, pos.y);
+}
+function endDraw(evt) {
+  evt.preventDefault();
+  drawing = false;
+  ctx.beginPath();
+}
+
+canvas.addEventListener('mousedown', startDraw);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', endDraw);
+canvas.addEventListener('mouseleave', endDraw);
+
+canvas.addEventListener('touchstart', startDraw, { passive: false });
+canvas.addEventListener('touchmove', draw, { passive: false });
+canvas.addEventListener('touchend', endDraw);
+canvas.addEventListener('touchcancel', endDraw);
 
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
