@@ -2,11 +2,18 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+let baseImageData = null;
+let userHasDrawn = false;  // FLAG para detectar dibujo del usuario
+
 const image = new Image();
 image.src = 'parabrisa.png';
-image.onload = () => ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 image.crossOrigin = 'anonymous';
+image.onload = () => {
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  baseImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+};
 
+// Variables para el dibujo
 let drawing = false;
 
 function getPos(evt) {
@@ -30,9 +37,9 @@ function startDraw(evt) {
   const pos = getPos(evt);
   ctx.beginPath();
   ctx.moveTo(pos.x, pos.y);
-  }
+}
 
-  function draw(evt) {
+function draw(evt) {
   if (!drawing) return;
   evt.preventDefault();
   const pos = getPos(evt);
@@ -43,7 +50,9 @@ function startDraw(evt) {
   ctx.stroke();
   ctx.beginPath();
   ctx.moveTo(pos.x, pos.y);
+  userHasDrawn = true;  // Aquí detectamos dibujo
 }
+
 function endDraw(evt) {
   evt.preventDefault();
   drawing = false;
@@ -63,6 +72,7 @@ canvas.addEventListener('touchcancel', endDraw);
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  userHasDrawn = false;  // Resetear flag al limpiar
 }
 
 window.onload = () => {
@@ -71,14 +81,24 @@ window.onload = () => {
   document.getElementById('dataForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const taller = document.getElementById('taller')?.value || '';
-    const serieNumero = document.getElementById('serieNumero')?.value || '';
-    const siniestro = document.getElementById('siniestro')?.value || '';
-    const fecha = document.getElementById('fecha')?.value || '';
-    const dificultadVisual = document.getElementById('dificultadVisual')?.value || '';
+    const taller = document.getElementById('taller').value.trim();
+    const serieNumero = document.getElementById('serieNumero').value.trim();
+    const siniestro = document.getElementById('siniestro').value.trim();
+    const fecha = document.getElementById('fecha').value.trim();
+    const dificultadVisual = document.getElementById('dificultadVisual').value.trim();
+
+    if (!taller || !serieNumero || !siniestro || !fecha) {
+      alert("Por favor complete todos los campos antes de generar el PDF.");
+      return;
+    }
+
+    // Si el usuario dibujó y dificultad visual está vacía, mostrar alerta
+    if (userHasDrawn && !dificultadVisual) {
+      alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
+      return;
+    }
 
     const pdf = new jsPDF();
-
     pdf.text(`Taller: ${taller}`, 10, 20);
     pdf.text(`Serie y Número: ${serieNumero}`, 10, 30);
     pdf.text(`Siniestro: ${siniestro}`, 10, 40);
@@ -93,7 +113,6 @@ window.onload = () => {
       return;
     }
 
-    // Convertir inputs a texto plano en la tabla antes de exportar
     const table = document.getElementById('tablaPiezas').cloneNode(true);
     const inputs = table.querySelectorAll('input');
     inputs.forEach(input => {
@@ -102,7 +121,6 @@ window.onload = () => {
     });
 
     pdf.autoTable({ html: table, startY: 195 });
-
     pdf.save("formulario_con_dibujo.pdf");
   });
 };
