@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let baseImageData = null;
-let userHasDrawn = false;  // FLAG para detectar dibujo del usuario
+let userHasDrawn = false;  
 
 const image = new Image();
 image.src = 'parabrisa.png';
@@ -13,7 +13,7 @@ image.onload = () => {
   baseImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 };
 
-// Variables para el dibujo
+
 let drawing = false;
 
 function getPos(evt) {
@@ -50,7 +50,7 @@ function draw(evt) {
   ctx.stroke();
   ctx.beginPath();
   ctx.moveTo(pos.x, pos.y);
-  userHasDrawn = true;  // Aquí detectamos dibujo
+  userHasDrawn = true;  
 }
 
 function endDraw(evt) {
@@ -72,7 +72,7 @@ canvas.addEventListener('touchcancel', endDraw);
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-  userHasDrawn = false;  // Resetear flag al limpiar
+  userHasDrawn = false;  
 }
 
 window.onload = () => {
@@ -92,7 +92,7 @@ window.onload = () => {
       return;
     }
 
-    // Si el usuario dibujó y dificultad visual está vacía, mostrar alerta
+    
     if (userHasDrawn && !dificultadVisual) {
       alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
       return;
