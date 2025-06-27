@@ -10,18 +10,18 @@
       font-family: sans-serif;
     }
 
-    .imagen-derecha {
+    img.logo {
       position: absolute;
-      top: 0px;
-      right: 10px;
-      width: 200px;
+      top: 10px;
+      left: 10px;
+      width: 100px;
     }
 
     h2 {
       text-align: center;
-      margin-top: 200px;
+      margin-top: 120px;
     }
-    
+
     h3 {
       text-align: center;
       margin-top: 50px;
@@ -65,39 +65,31 @@
     }
 
     table {
-    border-collapse: collapse;
-    width: 90%; /* Antes era 40% */
-    margin: auto;
-    margin-top: 25px;
-    table-layout: fixed; /* asegura respeto a los widths */
-  }
+      border-collapse: collapse;
+      width: 90%;
+      margin: auto;
+      margin-top: 25px;
+      table-layout: fixed;
+    }
 
-      th, td {
-    border: 1px solid #000;
-    padding: 7px;
-    text-align: left;
-  }
-    .col-pieza {
-    width: 60%;
-    min-width: 200px;
-    white-space: nowrap;
-  }
+    th, td {
+      border: 1px solid #000;
+      padding: 7px;
+      text-align: left;
+    }
 
-  .col-chapa,
-  .col-pintura {
-    width: 20%;
-  }
-
-  td input {
-    width: 100%;
-    box-sizing: border-box;
-  }
+    td input {
+      width: 100%;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
-  <img src="Cars.jpg" alt="Logo de la empresa" class="imagen-derecha">
-  
+
+  <img src="Cars.jpg" alt="Logo Cars" class="logo">
+
   <h2>FORMULARIO EXTRA SEGURO</h2>
+
   <form id="dataForm">
     <div class="form-group">
       <label>Taller: <input type="text" id="taller" required></label>
@@ -110,7 +102,7 @@
     </div>
 
     <div class="canvas-section">
-      <canvas id="canvas" width="400" height="300"></canvas>
+      <canvas id="canvas" width="500" height="350"></canvas>
       <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
     </div>
 
@@ -119,68 +111,156 @@
     </div>
 
     <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
-    
-<body>
-  
-  <table id="tablaPiezas">
-    <thead>
-      <tr>
-        <th style="min-width: 300px;">PIEZA / ACCESORIOS</th>
-        <th>CHAPA</th>
-        <th>PINTURA</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Guardabarro del der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Guardabarro del izq</td><td><input type="text"></td><td><input                     type="text"></td></tr>
-      <tr><td>Espolon</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Careta</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Paragolpe delantero</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe del der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Semioptica derecha</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Semioptica izquierda</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Señalero del der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Señalero del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta delantera derecha</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta delantera izquierda</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Porton tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Porton tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Guardabarro tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Guardabarro tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Techo</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Parabrisas</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Panel trasero</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Tapa valija / Porton tras</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Paragolpe trasero</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>      
-      <tr><td>Farol trasero derecho</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Farol trasero izquierdo</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Zocalo derecho</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Zocalo izquierdo</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Luneta trasera</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Moldura sub tapa caja</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Lateral derecho caja</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Lateral izquierdo caja</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Frente de chapa</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta trasera der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta trasera izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Porton lateral der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Choriz de techo izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-       
-    </tbody>
-  </table>
 
-<div style="text-align:center; margin: 30px 0;">
+    <table id="tablaPiezas">
+      <thead>
+        <tr>
+          <th>PIEZA / ACCESORIOS</th>
+          <th>CHAPA</th>
+          <th>PINTURA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Guardabarro del der</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td>Guardabarro del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td>Parabrisas</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <!-- Agrega más filas según necesites -->
+      </tbody>
+    </table>
+
+    <div style="text-align:center; margin: 30px 0;">
       <button type="submit">Generar PDF</button>
     </div>
   </form>
 
+  <!-- LIBRERÍAS PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
-  <script src="script.js"></script>
+
+  <!-- SCRIPT FUNCIONAL -->
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    let baseImageData = null;
+    let userHasDrawn = false;
+
+    const image = new Image();
+    image.src = 'parabrisa.png'; // debe estar en la misma carpeta
+    image.crossOrigin = 'anonymous';
+    image.onload = () => {
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      baseImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    };
+
+    let drawing = false;
+
+    function getPos(evt) {
+      const rect = canvas.getBoundingClientRect();
+      return evt.touches ? {
+        x: evt.touches[0].clientX - rect.left,
+        y: evt.touches[0].clientY - rect.top
+      } : {
+        x: evt.offsetX,
+        y: evt.offsetY
+      };
+    }
+
+    function startDraw(evt) {
+      evt.preventDefault();
+      drawing = true;
+      const pos = getPos(evt);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+    }
+
+    function draw(evt) {
+      if (!drawing) return;
+      evt.preventDefault();
+      const pos = getPos(evt);
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = 'red';
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+      userHasDrawn = true;
+    }
+
+    function endDraw(evt) {
+      evt.preventDefault();
+      drawing = false;
+      ctx.beginPath();
+    }
+
+    canvas.addEventListener('mousedown', startDraw);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', endDraw);
+    canvas.addEventListener('mouseleave', endDraw);
+
+    canvas.addEventListener('touchstart', startDraw, { passive: false });
+    canvas.addEventListener('touchmove', draw, { passive: false });
+    canvas.addEventListener('touchend', endDraw);
+    canvas.addEventListener('touchcancel', endDraw);
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      userHasDrawn = false;
+    }
+
+    window.clearCanvas = clearCanvas;
+
+    window.onload = () => {
+      const { jsPDF } = window.jspdf;
+
+      document.getElementById('dataForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const taller = document.getElementById('taller').value.trim();
+        const serieNumero = document.getElementById('serieNumero').value.trim();
+        const siniestro = document.getElementById('siniestro').value.trim();
+        const fecha = document.getElementById('fecha').value.trim();
+        const dificultadVisual = document.getElementById('dificultadVisual').value.trim();
+
+        if (!taller || !serieNumero || !siniestro || !fecha) {
+          alert("Por favor complete todos los campos antes de generar el PDF.");
+          return;
+        }
+
+        if (userHasDrawn && !dificultadVisual) {
+          alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
+          return;
+        }
+
+        const pdf = new jsPDF();
+        pdf.text(`Taller: ${taller}`, 10, 20);
+        pdf.text(`Serie y Número: ${serieNumero}`, 10, 30);
+        pdf.text(`Siniestro: ${siniestro}`, 10, 40);
+        pdf.text(`Fecha: ${fecha}`, 10, 50);
+        pdf.text(`Dificultad visual: ${dificultadVisual}`, 10, 60);
+
+        try {
+          const imgData = canvas.toDataURL("image/png");
+          pdf.addImage(imgData, 'PNG', 10, 70, 180, 120);
+        } catch (error) {
+          alert("Error al convertir el canvas. Asegúrate de usar Live Server.");
+          return;
+        }
+
+        const table = document.getElementById('tablaPiezas').cloneNode(true);
+        const inputs = table.querySelectorAll('input');
+        inputs.forEach(input => {
+          const td = input.parentElement;
+          td.textContent = input.value;
+        });
+
+        pdf.autoTable({ html: table, startY: 195 });
+        pdf.save("formulario_con_dibujo.pdf");
+      });
+    };
+  </script>
 
 </body>
 </html>
-
