@@ -5,6 +5,14 @@ const ctx = canvas.getContext('2d');
 let baseImageData = null;
 let userHasDrawn = false;  
 
+.logo-cars {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px; /* tamaño chico */
+  height: auto;
+}
+
 const image = new Image();
 image.src = 'parabrisa.png';
 image.crossOrigin = 'anonymous';
