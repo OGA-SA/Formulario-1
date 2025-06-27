@@ -10,16 +10,33 @@
       font-family: sans-serif;
     }
 
+    .logo-cars {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: auto;
+    }
+
+    @media print {
+      .logo-cars {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 80px;
+      }
+    }
 
     h2 {
       text-align: left;
       margin-top: 200px;
       margin-left: 100px;
-       background-color: #ccc;
+      background-color: #ccc;
       padding: 10px;
-      width:60%
+      width: 60%;
     }
-    
+
     h3 {
       text-align: center;
       margin-top: 50px;
@@ -28,7 +45,8 @@
       width: 90%;
       margin-left: auto;
       margin-right: auto;
-    }   //poner un borde//
+      border: 1px solid #000;
+    }
 
     .imagen-izquierda {
       display: flex;
@@ -37,7 +55,7 @@
       justify-content: flex-start;
       width: 50%;
     }
-    
+
     .form-group {
       display: flex;
       flex-wrap: wrap;
@@ -49,16 +67,14 @@
     }
 
     .fecha {
-        margin-right: 100%;
-      }
-  
-    
+      margin-right: 100%;
+    }
+
     .form-group3 {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
-     
     }
 
     .form-group label {
@@ -66,11 +82,14 @@
       flex-direction: column;
       text-align: left;
     }
-    .form-group2 label, .form-group3 label {
+
+    .form-group2 label,
+    .form-group3 label {
       display: flex;
       flex-direction: column;
       text-align: center;
     }
+
     .form-group3 label {
       width: 20%;
     }
@@ -93,39 +112,41 @@
     }
 
     table {
-    border-collapse: collapse;
-    width: 90%; /* Antes era 40% */
-    margin: auto;
-    margin-top: 25px;
-    table-layout: fixed; /* asegura respeto a los widths */
-  }
+      border-collapse: collapse;
+      width: 90%;
+      margin: auto;
+      margin-top: 25px;
+      table-layout: fixed;
+    }
 
-      th, td {
-    border: 1px solid #000;
-    padding: 7px;
-    text-align: left;
-  }
+    th, td {
+      border: 1px solid #000;
+      padding: 7px;
+      text-align: left;
+    }
+
     .col-pieza {
-    width: 60%;
-    min-width: 200px;
-    white-space: nowrap;
-  }
+      width: 60%;
+      min-width: 200px;
+      white-space: nowrap;
+    }
 
-  .col-chapa,
-  .col-pintura {
-    width: 20%;
-  }
+    .col-chapa,
+    .col-pintura {
+      width: 20%;
+    }
 
-  td input {
-    width: 100%;
-    box-sizing: border-box;
-  }
+    td input {
+      width: 100%;
+      box-sizing: border-box;
+    }
   </style>
-  
 </head>
 <body>
-  <img src="Cars.jpg" alt="Logo de la empresa" class="imagen-izquierda">
-  
+
+  <!-- Logo en la esquina superior izquierda -->
+  <img src="Cars.jpg" alt="Logo de la empresa" class="logo-cars">
+
   <h2>FORMULARIO EXTRA SEGURO</h2>
   <form id="dataForm">
     <div class="form-group">
@@ -149,38 +170,36 @@
 
     <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
     
-<body>
-  
-  <div class="tables-container">
+    <div class="tables-container">
       <table id="tablaPiezas1">
         <thead>
           <tr><th>PIEZA / ACCESORIOS</th><th>CHAPA</th><th>PINTURA</th></tr>
         </thead>
         <tbody>
           <tr><td>Guardabarro del der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Guardabarro del izq</td><td><input type="text"></td><td><input                     type="text"></td></tr>
-      <tr><td>Espolon</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Careta</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Paragolpe delantero</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe del der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Semioptica derecha</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Semioptica izquierda</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Señalero del der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Señalero del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta delantera derecha</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta delantera izquierda</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Porton tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Porton tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Guardabarro tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Guardabarro tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Techo</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Parabrisas</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Panel trasero</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Tapa valija / Porton tras</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Paragolpe trasero</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puntera p/golpe tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Guardabarro del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Espolon</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Careta</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Paragolpe delantero</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puntera p/golpe del der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puntera p/golpe del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Semioptica derecha</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Semioptica izquierda</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Señalero del der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Señalero del izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puerta delantera derecha</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puerta delantera izquierda</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Porton tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Porton tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Guardabarro tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Guardabarro tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Techo</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Parabrisas</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Panel trasero</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Tapa valija / Porton tras</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Paragolpe trasero</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puntera p/golpe tras der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puntera p/golpe tras izq</td><td><input type="text"></td><td><input type="text"></td></tr>
         </tbody>
       </table>
 
@@ -190,22 +209,23 @@
         </thead>
         <tbody>
           <tr><td>Farol trasero derecho</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Farol trasero izquierdo</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Zocalo derecho</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Zocalo izquierdo</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Luneta trasera</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Moldura sub tapa caja</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Lateral derecho caja</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Lateral izquierdo caja</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Frente de chapa</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta trasera der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Puerta trasera izq</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Porton lateral der</td><td><input type="text"></td><td><input type="text"></td></tr>
-      <tr><td>Choriz de techo izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Farol trasero izquierdo</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Zocalo derecho</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Zocalo izquierdo</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Luneta trasera</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Moldura sub tapa caja</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Lateral derecho caja</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Lateral izquierdo caja</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Frente de chapa</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puerta trasera der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Puerta trasera izq</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Porton lateral der</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td>Choriz de techo izq</td><td><input type="text"></td><td><input type="text"></td></tr>
         </tbody>
       </table>
+    </div>
 
-<div style="text-align:center; margin: 30px 0;">
+    <div style="text-align:center; margin: 30px 0;">
       <button type="submit">Generar PDF</button>
     </div>
   </form>
