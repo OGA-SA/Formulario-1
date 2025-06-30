@@ -110,7 +110,8 @@
       gap: 20px;
     }
 
-    .form-columna-derecha label {
+    .form-columna-derecha1 label,
+    .form-columna-derecha2 label{
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -122,7 +123,8 @@
       margin-top: 20px;
     }
 
-    .form-columna-derecha input {
+    .form-columna-derecha1 input
+    .form-columna-derecha2 input{
       border: none;
       background: transparent;
       margin-top: 5px;
@@ -173,8 +175,12 @@
         </button>
       </div>
 
-      <div class="form-columna-derecha">
+      <div class="form-columna-derecha1">
         <label>Siniestro: <input type="text" id="siniestro" required /></label>
+          </div>
+    </div>
+    
+    <div class="form-columna-derecha2">
         <label>Dificulta visual?: <input type="text" id="dificultadVisual" /></label>
       </div>
     </div>
