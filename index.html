@@ -73,15 +73,13 @@
 
  
     .form-group label span,
-    .form-columna-derecha1 span,
-    .form-columna-derecha2  span {
+    .columna-derecha span {
           text-align: left;
           min-width:80px;
             }
     
     .form-group input,
-    .form-columna-derecha1 input,
-    .form-columna-derecha2 input{
+    .columna-derecha input{
       border: none;
       outline: none;
       padding: 5px;
@@ -112,15 +110,15 @@
       align-self: flex-end;
     }
 
-    .form-columna-derecha1,
-    .form-columna-derecha2 {
+    .columna-derecha {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-end;
       gap: 20px;
+      margin-top: 10px;
     }
 
-    .form-columna-derecha1 label,
-    .form-columna-derecha2 label {
+    .columna-derecha label {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -132,15 +130,7 @@
       margin-top: 20px;
     }
 
-    .form-columna-derecha1 input
-    .form-columna-derecha2 input{
-      border: none;
-      background: transparent;
-      margin-top: 5px;
-      padding: 5px;
-      font-size: 14px;
-    }
-
+    
     table {
       border-collapse: collapse;
       width: 90%;
@@ -184,13 +174,9 @@
         </button>
       </div>
 
-      <div class="form-columna-derecha1">
-        <label> <span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
-          </div>
-    </div>
-    
-    <div class="form-columna-derecha2">
-        <label> <span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
+      <div class="columna-derecha">
+        <label class="stro"> <span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
+        <label class="visual"> <span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
       </div>
     </div>
 
