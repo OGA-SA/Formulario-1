@@ -28,26 +28,25 @@
       border-radius: 8px;
     }
 
-    .datos{
+    .datos {
       display: flex;
       justify-content: center;
     }
 
-      
-    .texto{
+    .texto {
       margin-top: 30px;
       width: 95%;
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     h3 {
       text-align: center;
       border: 1px solid black;
       padding: 8px;
-      margin:0;
+      margin: 0;
       width: 95%;
-        }
+    }
 
     .form-group {
       display: flex;
@@ -68,46 +67,46 @@
       gap: 10px;
       margin-left: 20px;
       margin-right: 20px;
-          }
+    }
 
     .form-group label.Fecha {
       border: none;
       padding: 10px;
       align-items: flex-end;
       margin-left: 10px;
-              }
+    }
 
- 
     .form-group label span,
     .columna-derecha span {
-          text-align: left;
-          min-width:80px;
-            }
+      text-align: left;
+      min-width: 80px;
+    }
+
     .columna-derecha .visual {
       min-width: 110px;
     }
-    
+
     .form-group input,
-    .columna-derecha input{
+    .columna-derecha input {
       border: none;
       outline: none;
       padding: 5px;
       background-color: transparent;
       font-size: 14px;
-        }
-
+    }
 
     .imagen-y-campos {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       width: calc(100% - 60px);
-      magin-bottom: 40px;
+      margin-bottom: 40px;
     }
 
     .canvas-section {
       width: 70%;
     }
+
     .clear-button {
       margin-top: 10px;
       display: flex;
@@ -119,11 +118,10 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      marging-left: 20px;
+      margin-left: 20px;
       margin-top: 10px;
       gap: 35px;
       width: 30%;
-    
     }
 
     .columna-derecha label {
@@ -134,27 +132,16 @@
       border-radius: 4px;
       min-width: 200px;
       margin-top: 20px;
-          }
+    }
 
-    
     table {
-      display: flex:
-      justify-content: flex-start;
       border-collapse: collapse;
       width: 90%;
       margin: auto;
       margin-top: 25px;
       table-layout: fixed;
     }
-    
-    .tablaPiezas1,
-    .tablaPiezas2 {
-        display: flex;
-        width: 40%;
-        gap: 5px;
-        justify-content: flex-start;
-    }
-      
+
     th,
     td {
       border: 1px solid #000;
@@ -162,108 +149,94 @@
       text-align: left;
     }
 
-   td input {
+    td input {
       width: 100%;
       box-sizing: border-box;
       border: none;
       padding: 5px;
     }
-    
+
+    /* NUEVO CONTENEDOR PARA LAS TABLAS */
+    .tablas-piezas {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tablas-piezas table {
+      width: 40%;
+    }
   </style>
 </head>
 <body>
   <img src="Cars.JPG" alt="Logo Cars" class="logo" />
 
   <h2>FORMULARIO EXTRA SEGURO</h2>
-<div class="datos"> 
-  <form id="dataForm">
-    <div class="form-group">
-      <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
-      <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
-      <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
-    </div>
-
-    <div class="imagen-y-campos">
-      <div class="canvas-section">
-        <canvas id="canvas" width="700" height="350"></canvas>
-        <button class="clear-button" type="button" onclick="clearCanvas()">
-          Limpiar Dibujo
-        </button>
+  <div class="datos"> 
+    <form id="dataForm">
+      <div class="form-group">
+        <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
+        <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
+        <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
       </div>
 
-      <div class="columna-derecha">
-        <label class="stro"> <span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
-        <label class="visual"> <span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
+      <div class="imagen-y-campos">
+        <div class="canvas-section">
+          <canvas id="canvas" width="700" height="350"></canvas>
+          <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
+        </div>
+
+        <div class="columna-derecha">
+          <label class="stro"> <span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
+          <label class="visual"> <span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
+        </div>
       </div>
-    </div>
+
+      <div class="texto">
+        <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES</h3>
+        <h3>ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
       </div>
-    <div class="texto">
-    <h3>
-      SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS
-      RECLAMACIONES
-    </h3>
-    <h3>ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
+
+      <!-- CONTENEDOR FLEX PARA LAS DOS TABLAS -->
+      <div class="tablas-piezas">
+        <table id="tablaPiezas1">
+          <thead>
+            <tr>
+              <th>PIEZA / ACCESORIOS</th>
+              <th>CHAPA</th>
+              <th>PINTURA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Guardabarro del der</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+            <tr><td>Guardabarro del izq</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+            <tr><td>Parabrisas</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+          </tbody>
+        </table>
+
+        <table id="tablaPiezas2">
+          <thead>
+            <tr>
+              <th>PIEZA / ACCESORIOS</th>
+              <th>CHAPA</th>
+              <th>PINTURA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Guardabarro del der</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+            <tr><td>Guardabarro del izq</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+            <tr><td>Parabrisas</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+          </tbody>
+        </table>
       </div>
-    
-    <table id="tablaPiezas1">
-      <thead>
-        <tr>
-          <th>PIEZA / ACCESORIOS</th>
-          <th>CHAPA</th>
-          <th>PINTURA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Guardabarro del der</td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Guardabarro del izq</td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Parabrisas</td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-        </tr>
-        <!-- Agrega más filas según necesites -->
-      </tbody>
-    </table>
-  
-<table id="tablaPiezas2">
-      <thead>
-        <tr>
-          <th>PIEZA / ACCESORIOS</th>
-          <th>CHAPA</th>
-          <th>PINTURA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Guardabarro del der</td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Guardabarro del izq</td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Parabrisas</td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-        </tr>
-        <!-- Agrega más filas según necesites -->
-      </tbody>
-    </table>
-    <div style="text-align: center; margin: 30px 0;">
-      <button type="submit">Generar PDF</button>
-    </div>
-  </form>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <button type="submit">Generar PDF</button>
+      </div>
+    </form>
+  </div>
 
   <!-- LIBRERÍAS PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -273,12 +246,11 @@
   <script>
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
-
     let baseImageData = null;
     let userHasDrawn = false;
 
     const image = new Image();
-    image.src = "parabrisa.png"; // debe estar en la misma carpeta
+    image.src = "parabrisa.png";
     image.crossOrigin = "anonymous";
     image.onload = () => {
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -290,14 +262,8 @@
     function getPos(evt) {
       const rect = canvas.getBoundingClientRect();
       return evt.touches
-        ? {
-            x: evt.touches[0].clientX - rect.left,
-            y: evt.touches[0].clientY - rect.top,
-          }
-        : {
-            x: evt.offsetX,
-            y: evt.offsetY,
-          };
+        ? { x: evt.touches[0].clientX - rect.left, y: evt.touches[0].clientY - rect.top }
+        : { x: evt.offsetX, y: evt.offsetY };
     }
 
     function startDraw(evt) {
@@ -383,7 +349,7 @@
           return;
         }
 
-        const table = document.getElementById("tablaPiezas").cloneNode(true);
+        const table = document.getElementById("tablaPiezas1").cloneNode(true);
         const inputs = table.querySelectorAll("input");
         inputs.forEach((input) => {
           const td = input.parentElement;
