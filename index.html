@@ -4,181 +4,196 @@
   <meta charset="UTF-8" />
   <title>FORMULARIO EXTRA SEGURO</title>
   <style>
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    body {
-      
-      padding: 0;
-      font-family: sans-serif;
-      width: 100%;
-    }
+    * {
+  box-sizing: border-box;
+}
 
-    img.logo {
-      position: absolute;
-      top: 25px;
-      left: 30px;
-      width: 140px;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    h2 {
-      text-align: center;
-      margin-top: 100PX;
-      background-color: #ccc;
-      padding: 10px;
-      border-radius: 8px;
-      width: 95%;
-    }
+/* Logo */
+img.logo {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: 140px;
+}
 
-    .datos {
-      width: 95%;
-      display: flex;
-      justify-content: center;
-    }
+/* Título principal */
+h2 {
+  text-align: center;
+  margin-top: 100px;
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 95%;
+}
 
-    .texto {
-      margin-top: 30px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 95%;
-        
-    }
+/* Contenedor del formulario */
+.datos {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
 
-    h3 {
-      text-align: center;
-      border: 1px solid black;
-      padding: 8px;
-      margin: 0;
-      width: 100%;
-    }
+/* Textos explicativos */
+.texto {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
 
-    .form-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 120px;
-      margin: 20px auto;
-      
-    }
+/* Subtítulos */
+h3 {
+  text-align: center;
+  border: 1px solid black;
+  padding: 8px;
+  margin: 0;
+  width: 100%;
+}
 
-    .form-group label {
-      display: flex;
-      align-items: center;
-      border: 1px solid #999;
-      padding: 10px;
-      border-radius: 4px;
-      gap: 10px;
-          }
+/* Grupo de campos iniciales */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 120px;
+  margin: 20px auto;
+}
 
-    .form-group label.Fecha {
-      border: none;
-      padding: 10px;
-      justify-content: flex-end;
-         }
+/* Estilo general para los labels */
+.form-group label {
+  display: flex;
+  align-items: center;
+  border: 1px solid #999;
+  padding: 10px;
+  border-radius: 4px;
+  gap: 10px;
+}
 
-    .form-group label span,
-    .columna-derecha span {
-      text-align: left;
-      min-width: 80px;
-    }
+/* Label especial para Fecha (sin borde) */
+.form-group label.Fecha {
+  border: none;
+  padding: 10px;
+  justify-content: flex-end;
+}
 
-    .columna-derecha .visual {
-      min-width: 110px;
-    }
+/* Texto de los labels */
+.form-group label span,
+.columna-derecha span {
+  text-align: left;
+  min-width: 80px;
+}
 
-    .form-group input,
-    .columna-derecha input {
-      border: none;
-      outline: none;
-      padding: 5px;
-      background-color: transparent;
-      font-size: 14px;
-    }
+.columna-derecha .visual {
+  min-width: 110px;
+}
 
-    .imagen-y-campos {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 40px auto;
-      gap:30px;
-      
-    }
+/* Inputs */
+.form-group input,
+.columna-derecha input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+  font-size: 14px;
+}
 
-    .canvas-section {
-       width: 70%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      
-    }
+/* Contenedor para imagen y campos extra */
+.imagen-y-campos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+  gap: 20px;
+  width: 100%;
+}
 
-    .canvas{
-      display: flex;
-      align-items: flex-end;
-    }
-    
-    .clear-button {
-     margin-top: 10px;
-      align-self: flex-end;
-      margin-right: 20px;
-    }
+/* Sección del canvas */
+.canvas-section {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .columna-derecha {
-       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 35px;
-      width: 25%;
-    }
+/* Canvas en sí */
+.canvas {
+  display: flex;
+  align-items: flex-end;
+}
 
-    .columna-derecha label {
-      display: flex;
-      text-align: left;
-      border: 1px solid #999;
-      padding: 10px;
-      border-radius: 4px;
-      min-width: 200px;
-    }
+/* Botón de limpiar canvas */
+.clear-button {
+  margin-top: 10px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
 
-    table {
-      border-collapse: collapse;
-      margin: 25px auto 0 auto;
-      table-layout: fixed;
-    }
+/* Campos a la derecha del canvas */
+.columna-derecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  width: 30%;
+}
 
-    th,
-    td {
-      border: 1px solid #000;
-      padding: 7px;
-      text-align: left;
-    }
+/* Estilo de los labels en columna derecha */
+.columna-derecha label {
+  display: flex;
+  text-align: left;
+  border: 1px solid #999;
+  padding: 10px;
+  border-radius: 4px;
+  min-width: 200px;
+}
 
-    td input {
-     width: 100%;
-      border: none;
-      padding: 5px;
-       table-layout: fixed;
-    }
+/* Tablas */
+table {
+  border-collapse: collapse;
+  margin: 25px auto 0 auto;
+  table-layout: fixed;
+}
 
-    /* NUEVO CONTENEDOR PARA LAS TABLAS */
-    .tablas-piezas {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-      width: 95%;
-    }
+th,
+td {
+  border: 1px solid #000;
+  padding: 7px;
+  text-align: left;
+}
 
-    .tablas-piezas table {
-      width: 45%;
-    }
-    
+/* Inputs dentro de tablas */
+td input {
+  width: 100%;
+  border: none;
+  padding: 5px;
+}
+
+/* Contenedor de las tablas */
+.tablas-piezas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+/* Ancho de las tablas */
+.tablas-piezas table {
+  width: 45%;
+}
   </style>
 </head>
 <body>
