@@ -39,6 +39,7 @@
       .datos {
         width: 95%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
       }
 
@@ -57,6 +58,9 @@
         width: 100%;
       }
 
+
+
+      
       /* NUEVO contenedor horizontal */
       .fila-formulario {
         display: flex;
@@ -215,30 +219,34 @@
 
     <h2>FORMULARIO EXTRA SEGURO</h2>
     <div class="datos">
+      
       <form id="dataForm">
-        <!-- GRUPO EN LÍNEA -->
-        <div class="fila-formulario">
-          <div class="form-group">
-            <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
-            <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
-          </div>
+              <div class="fila-formulario">
+                  <div class="form-group">
+                    <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
+                    <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
+                  </div>
+                </div>
+             </form>   
+              <div class="imagen-y-campos">
+                <div class="canvas-section">
+                  <canvas id="canvas" width="700" height="350"></canvas>
+                  <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
+                  </div>
+              </div>
+         
+              
 
-          <div class="fecha">
+          <form class="columna-derecha">
+             <div class="fecha">
             <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
           </div>
-        </div>
-
-        <div class="imagen-y-campos">
-          <div class="canvas-section">
-            <canvas id="canvas" width="700" height="350"></canvas>
-            <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
-          </div>
-
-          <div class="columna-derecha">
+            <div class="stro">  
             <label class="stro"> <span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
             <label class="visual"> <span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
           </div>
-        </div>
+            </form>
+       </div>
 
         <div class="texto">
           <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES</h3>
