@@ -1,188 +1,410 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FORMULARIO EXTRA SEGURO</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulario con Dibujo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-    h2 {
-      text-align: center;
-      margin-top: 30px;
-    }
+      img.logo {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        width: 140px;
+      }
 
-    form {
-      width: 95%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+      h2 {
+        text-align: center;
+        margin-top: 100px;
+        background-color: #ccc;
+        padding: 10px;
+        border-radius: 8px;
+        width: 95%;
+      }
 
-    .contenedor-principal-formulario {
-      width: 95%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+      .datos {
+        width: 95%;
+        display: flex;
+        justify-content: center;
+      }
 
-    .columna-izquierda {
-      width: 70%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+      .texto {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+      }
 
-    .columna-derecha-ext {
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
+      h3 {
+        text-align: center;
+        border: 1px solid black;
+        padding: 8px;
+        margin: 0;
+        width: 100%;
+      }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+      /* NUEVO contenedor horizontal */
+      .fila-formulario {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin: 20px auto;
+        flex-wrap: wrap;
+      }
 
-    .form-group label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: bold;
-    }
+      .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 120px;
+      }
 
-    .form-group input,
-    .columna-derecha input {
-      border: none;
-      outline: none;
-      padding: 5px;
-      background-color: transparent;
-      font-size: 14px;
-    }
+      .form-group label {
+        display: flex;
+        align-items: center;
+        border: 1px solid #999;
+        padding: 10px;
+        border-radius: 4px;
+        gap: 10px;
+      }
 
-    .canvas-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
 
-    #canvas {
-      border: 2px solid #000;
-    }
+      .fila-formulario .fecha {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25%;
+          border: none;
+      }
+      
+      .fila-formulario .fecha label.Fecha {
+        border: 1px solid #999;
+        border-radius: 4px;
+        padding: 10px;
+        gap: 10px;
+        width:100%
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .fecha label.fecha{
+        width: 80%;
+      }
+  
+      .fila-formulario .fecha label.Fecha input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+          }
 
-    .clear-button {
-      padding: 8px 12px;
-      font-size: 14px;
-      border: none;
-      background-color: #c33;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+      
+      .form-group label span,
+      .columna-derecha span {
+        text-align: left;
+        min-width: 80px;
+      }
 
-    .columna-derecha-ext .fecha {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
+      .columna-derecha .visual {
+        min-width: 110px;
+      }
 
-    .columna-derecha-ext .fecha label.Fecha {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #999;
-      border-radius: 4px;
-      padding: 10px;
-      gap: 10px;
-    }
+      .form-group input,
+      .columna-derecha input {
+        border: none;
+        outline: none;
+        padding: 5px;
+        background-color: transparent;
+        font-size: 14px;
+      }
 
-    .columna-derecha-ext .fecha input {
-      border: none;
-      outline: none;
-      background-color: transparent;
-    }
+      .imagen-y-campos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 40px auto;
+        gap: 20px;
+        width: 100%;
+      }
 
-    .columna-derecha label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: bold;
-    }
-  </style>
-</head>
+      .canvas-section {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-<body>
-  <h2>Formulario con Dibujo</h2>
-  <form>
-    <div class="contenedor-principal-formulario">
-      <div class="columna-izquierda">
-        <div class="form-group">
-          <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
-          <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
+      .canvas {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .clear-button {
+        margin-top: 10px;
+        align-self: flex-end;
+        margin-right: 20px;
+      }
+
+      .columna-derecha {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        width: 30%;
+      }
+
+      .columna-derecha label {
+        display: flex;
+        text-align: left;
+        border: 1px solid #999;
+        padding: 10px;
+        border-radius: 4px;
+        min-width: 200px;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 25px auto 0 auto;
+        table-layout: fixed;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 7px;
+        text-align: left;
+      }
+
+      td input {
+        width: 100%;
+        border: none;
+        padding: 5px;
+      }
+
+      .tablas-piezas {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .tablas-piezas table {
+        width: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="Cars.JPG" alt="Logo Cars" class="logo" />
+
+    <h2>FORMULARIO EXTRA SEGURO</h2>
+    <div class="datos">
+      <form id="dataForm">
+        <!-- GRUPO EN LÍNEA -->
+        <div class="fila-formulario">
+          <div class="form-group">
+            <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
+            <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
+          </div>
+
+          <div class="fecha">
+            <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
+          </div>
         </div>
 
-        <div class="canvas-section">
-          <canvas id="canvas" width="700" height="350"></canvas>
-          <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
-        </div>
-      </div>
+        <div class="imagen-y-campos">
+          <div class="canvas-section">
+            <canvas id="canvas" width="700" height="350"></canvas>
+            <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
+          </div>
 
-      <div class="columna-derecha-ext">
-        <div class="fecha">
-          <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
+          <div class="columna-derecha">
+            <label class="stro"> <span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
+            <label class="visual"> <span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
+          </div>
         </div>
 
-        <div class="columna-derecha">
-          <label class="stro"><span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
-          <label class="visual"><span>Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
+        <div class="texto">
+          <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES</h3>
+          <h3>ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
         </div>
-      </div>
+
+        <div class="tablas-piezas">
+          <table id="tablaPiezas1">
+            <thead>
+              <tr>
+                <th>PIEZA / ACCESORIOS</th>
+                <th>CHAPA</th>
+                <th>PINTURA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Guardabarro del der</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+              <tr><td>Guardabarro del izq</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+              <tr><td>Parabrisas</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+            </tbody>
+          </table>
+
+          <table id="tablaPiezas2">
+            <thead>
+              <tr>
+                <th>PIEZA / ACCESORIOS</th>
+                <th>CHAPA</th>
+                <th>PINTURA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Guardabarro del der</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+              <tr><td>Guardabarro del izq</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+              <tr><td>Parabrisas</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+          <button type="submit">Generar PDF</button>
+        </div>
+      </form>
     </div>
-  </form>
 
-  <script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    let painting = false;
+    <!-- LIBRERÍAS PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
-    canvas.addEventListener('mousedown', () => painting = true);
-    canvas.addEventListener('mouseup', () => painting = false);
-    canvas.addEventListener('mousemove', draw);
+    <!-- SCRIPT FUNCIONAL -->
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      let baseImageData = null;
+      let userHasDrawn = false;
 
-    function draw(e) {
-      if (!painting) return;
-      ctx.lineWidth = 2;
-      ctx.lineCap = 'round';
-      ctx.strokeStyle = '#000';
+      const image = new Image();
+      image.src = "parabrisa.png";
+      image.crossOrigin = "anonymous";
+      image.onload = () => {
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        baseImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      };
 
-      ctx.lineTo(e.offsetX, e.offsetY);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(e.offsetX, e.offsetY);
-    }
+      let drawing = false;
 
-    function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.beginPath();
-    }
-  </script>
-</body>
+      function getPos(evt) {
+        const rect = canvas.getBoundingClientRect();
+        return evt.touches
+          ? { x: evt.touches[0].clientX - rect.left, y: evt.touches[0].clientY - rect.top }
+          : { x: evt.offsetX, y: evt.offsetY };
+      }
 
+      function startDraw(evt) {
+        evt.preventDefault();
+        drawing = true;
+        const pos = getPos(evt);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      }
+
+      function draw(evt) {
+        if (!drawing) return;
+        evt.preventDefault();
+        const pos = getPos(evt);
+        ctx.lineWidth = 2;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "red";
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+        userHasDrawn = true;
+      }
+
+      function endDraw(evt) {
+        evt.preventDefault();
+        drawing = false;
+        ctx.beginPath();
+      }
+
+      canvas.addEventListener("mousedown", startDraw);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("mouseup", endDraw);
+      canvas.addEventListener("mouseleave", endDraw);
+
+      canvas.addEventListener("touchstart", startDraw, { passive: false });
+      canvas.addEventListener("touchmove", draw, { passive: false });
+      canvas.addEventListener("touchend", endDraw);
+      canvas.addEventListener("touchcancel", endDraw);
+
+      function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        userHasDrawn = false;
+      }
+
+      window.clearCanvas = clearCanvas;
+
+      window.onload = () => {
+        const { jsPDF } = window.jspdf;
+
+        document.getElementById("dataForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const taller = document.getElementById("taller").value.trim();
+          const serieNumero = document.getElementById("serieNumero").value.trim();
+          const siniestro = document.getElementById("siniestro").value.trim();
+          const fecha = document.getElementById("fecha").value.trim();
+          const dificultadVisual = document.getElementById("dificultadVisual").value.trim();
+
+          if (!taller || !serieNumero || !siniestro || !fecha) {
+            alert("Por favor complete todos los campos antes de generar el PDF.");
+            return;
+          }
+
+          if (userHasDrawn && !dificultadVisual) {
+            alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
+            return;
+          }
+
+          const pdf = new jsPDF();
+          pdf.text(`Taller: ${taller}`, 10, 20);
+          pdf.text(`Serie y Número: ${serieNumero}`, 10, 30);
+          pdf.text(`Siniestro: ${siniestro}`, 10, 40);
+          pdf.text(`Fecha: ${fecha}`, 10, 50);
+          pdf.text(`Dificultad visual: ${dificultadVisual}`, 10, 60);
+
+          try {
+            const imgData = canvas.toDataURL("image/png");
+            pdf.addImage(imgData, "PNG", 10, 70, 180, 120);
+          } catch (error) {
+            alert("Error al convertir el canvas. Asegúrate de usar Live Server.");
+            return;
+          }
+
+          const table = document.getElementById("tablaPiezas1").cloneNode(true);
+          const inputs = table.querySelectorAll("input");
+          inputs.forEach((input) => {
+            const td = input.parentElement;
+            td.textContent = input.value;
+          });
+
+          pdf.autoTable({ html: table, startY: 195 });
+          pdf.save("formulario_con_dibujo.pdf");
+        });
+      };
+    </script>
+  </body>
 </html>
