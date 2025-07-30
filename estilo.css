@@ -121,6 +121,7 @@ h2 {
         min-width: 200px;
         gap: 35px;
       }
+
       .columna-derecha .fecha {
         display: flex;
         justify-content: flex-start;
@@ -149,7 +150,11 @@ h2 {
        .columna-derecha .visual {
         min-width: 110px;
       }
-      
+
+      .stro{
+        gap:30px;
+      }
+
       .form-group label span,
       .columna-derecha span {
         text-align: left;
