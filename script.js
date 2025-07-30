@@ -1,127 +1,217 @@
-
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-
-let baseImageData = null;
-let userHasDrawn = false;  
-
-
-const image = new Image();
-image.src = 'parabrisa.png';
-image.crossOrigin = 'anonymous';
-image.onload = () => {
-  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-  baseImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-};
-
-
-let drawing = false;
-
-function getPos(evt) {
-  const rect = canvas.getBoundingClientRect();
-  if (evt.touches) {
-    return {
-      x: evt.touches[0].clientX - rect.left,
-      y: evt.touches[0].clientY - rect.top
-    };
-  } else {
-    return {
-      x: evt.offsetX,
-      y: evt.offsetY
-    };
-  }
+* {
+  box-sizing: border-box;
 }
 
-function startDraw(evt) {
-  evt.preventDefault();
-  drawing = true;
-  const pos = getPos(evt);
-  ctx.beginPath();
-  ctx.moveTo(pos.x, pos.y);
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-function draw(evt) {
-  if (!drawing) return;
-  evt.preventDefault();
-  const pos = getPos(evt);
-  ctx.lineWidth = 2;
-  ctx.lineCap = 'round';
-  ctx.strokeStyle = 'red';
-  ctx.lineTo(pos.x, pos.y);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(pos.x, pos.y);
-  userHasDrawn = true;  
+img.logo {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: 140px;
 }
 
-function endDraw(evt) {
-  evt.preventDefault();
-  drawing = false;
-  ctx.beginPath();
+h2 {
+  text-align: center;
+  margin-top: 100px;
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 95%;
 }
 
-canvas.addEventListener('mousedown', startDraw);
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', endDraw);
-canvas.addEventListener('mouseleave', endDraw);
-
-canvas.addEventListener('touchstart', startDraw, { passive: false });
-canvas.addEventListener('touchmove', draw, { passive: false });
-canvas.addEventListener('touchend', endDraw);
-canvas.addEventListener('touchcancel', endDraw);
-
-function clearCanvas() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-  userHasDrawn = false;  
+.datos {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: 30px;
 }
 
-window.onload = () => {
-  const { jsPDF } = window.jspdf;
+.contenedor-izquierda {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
 
-  document.getElementById('dataForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+.texto {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
 
-    const taller = document.getElementById('taller').value.trim();
-    const serieNumero = document.getElementById('serieNumero').value.trim();
-    const siniestro = document.getElementById('siniestro').value.trim();
-    const fecha = document.getElementById('fecha').value.trim();
-    const dificultadVisual = document.getElementById('dificultadVisual').value.trim();
+h3 {
+  text-align: center;
+  border: 1px solid black;
+  padding: 8px;
+  margin: 0;
+  width: 100%;
+}
 
-    if (!taller || !serieNumero || !siniestro || !fecha) {
-      alert("Por favor complete todos los campos antes de generar el PDF.");
-      return;
-    }
+.fila-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
 
-    
-    if (userHasDrawn && !dificultadVisual) {
-      alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
-      return;
-    }
+.form-group {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
 
-    const pdf = new jsPDF();
-    pdf.text(`Taller: ${taller}`, 10, 20);
-    pdf.text(`Serie y Número: ${serieNumero}`, 10, 30);
-    pdf.text(`Siniestro: ${siniestro}`, 10, 40);
-    pdf.text(`Fecha: ${fecha}`, 10, 50);
-    pdf.text(`Dificultad visual: ${dificultadVisual}`, 10, 60);
+.form-group label {
+  display: flex;
+  align-items: center;
+  border: 1px solid #999;
+  padding: 10px;
+  border-radius: 4px;
+  gap: 10px;
+}
 
-    try {
-      const imgData = canvas.toDataURL("image/png");
-      pdf.addImage(imgData, 'PNG', 10, 70, 180, 120);
-    } catch (error) {
-      alert("Error al convertir el canvas. Asegúrate de usar Live Server.");
-      return;
-    }
+.columna-derecha .fecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-bottom: 40px;
+  gap: 30px;
+}
 
-    const table = document.getElementById('tablaPiezas').cloneNode(true);
-    const inputs = table.querySelectorAll('input');
-    inputs.forEach(input => {
-      const td = input.parentElement;
-      td.textContent = input.value;
-    });
+.columna-derecha .fecha label.Fecha {
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    pdf.autoTable({ html: table, startY: 195 });
-    pdf.save("formulario_con_dibujo.pdf");
-  });
-};
+.fecha label.fecha {
+  width: 80%;
+}
+
+.columna-derecha .fecha label.Fecha input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.form-group label span,
+.columna-derecha span {
+  text-align: left;
+  min-width: 80px;
+}
+
+.columna-derecha .visual {
+  min-width: 110px;
+}
+
+.form-group input,
+.columna-derecha input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.imagen-y-campos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  gap: 20px;
+  width: 100%;
+}
+
+.canvas-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas {
+  display: flex;
+  align-items: flex-end;
+}
+
+.clear-button {
+  margin-top: 10px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+.columna-derecha {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 35px;
+}
+
+.columna-derecha label {
+  display: flex;
+  text-align: left;
+  border: 1px solid #999;
+  padding: 10px;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px auto 0 auto;
+  table-layout: fixed;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 7px;
+  text-align: left;
+}
+
+td input {
+  width: 100%;
+  border: none;
+  padding: 5px;
+}
+
+.tablas-piezas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tablas-piezas table {
+  width: 45%;
+}
+
