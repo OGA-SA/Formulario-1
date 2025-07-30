@@ -15,7 +15,7 @@ html, body {
 }
 
 img.logo {
-  position: static; /* quitamos absolute */
+  position: static;
   margin: 25px auto 0 auto;
   display: block;
   width: 140px;
@@ -34,36 +34,52 @@ h2 {
   box-sizing: border-box;
 }
 
+/* Contenedor principal con flex sin wrap y scroll horizontal */
 .datos {
   width: 95%;
   max-width: 1200px;
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 10px; /* reducido para evitar overflow */
+  gap: 15px;
   margin-top: 30px;
   padding: 0 10px;
   box-sizing: border-box;
-  flex-wrap: wrap; /* permite que las columnas bajen en pantallas pequeñas */
+
+  flex-wrap: nowrap;       /* No permite que los hijos bajen */
+  overflow-x: auto;        /* Scroll horizontal si no cabe */
 }
 
+/* Columnas hijas que escalan manteniendo estructura interna */
 .contenedor-izquierda {
   flex: 7 1 0;
+  min-width: 300px;    /* mínimo para no romper */
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  max-width: 100%;
   box-sizing: border-box;
 }
 
+.columna-derecha {
+  flex: 3 1 0;
+  min-width: 200px;    /* mínimo ancho */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Formularios internos mantienen fila sin wrap */
 .fila-formulario {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95%;
   margin: 20px auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .form-group {
@@ -78,14 +94,15 @@ h2 {
 }
 
 .form-group label {
+  flex-shrink: 1;
+  min-width: 100px;
+  max-width: 100%;
   display: flex;
   align-items: center;
-  border: 1px solid #999;
-  padding: 10px;
-  border-radius: 4px;
   gap: 10px;
-  max-width: 100%;
-  width: auto;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
   box-sizing: border-box;
 }
 
@@ -118,18 +135,6 @@ h2 {
   margin-right: 20px;
 }
 
-.columna-derecha {
-  flex: 3 1 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 20px;
-  height: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 .columna-derecha label {
   display: flex;
   text-align: left;
@@ -150,7 +155,7 @@ h2 {
   border: none;
   margin-bottom: 40px;
   gap: 30px;
-  flex-wrap: wrap; /* para que los items bajen en pantallas chicas */
+  flex-wrap: nowrap;
 }
 
 .columna-derecha .fecha label.Fecha {
@@ -259,7 +264,7 @@ td input {
   justify-content: center;
   gap: 40px;
   margin-top: 30px;
-  flex-wrap: nowrap; /* para evitar overflow, se puede cambiar en media queries */
+  flex-wrap: nowrap;
   width: 100%;
   overflow-x: auto;
   box-sizing: border-box;
@@ -271,21 +276,12 @@ td input {
   box-sizing: border-box;
 }
 
-/* ==== MEDIA QUERIES PARA RESPONSIVE ==== */
+/* ==== MEDIA QUERIES ==== */
 
 /* Tablets (menor a 768px) */
 @media (max-width: 767px) {
-  html, body {
-    min-width: 100%;
-  }
-
   img.logo {
-    position: static;
-    margin: 20px auto 0 auto;
-    display: block;
     width: 120px;
-    max-width: 100%;
-    height: auto;
   }
 
   h2 {
@@ -294,112 +290,42 @@ td input {
     font-size: 1.3rem;
   }
 
+  /* Mantenemos wrap para evitar scroll horizontal extremo, si querés quitarlo sacalo */
   .datos {
-    flex-direction: column;
-    width: 95%;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 
+  /* Permitir que columnas se achiquen pero sin cambiar estructura */
   .contenedor-izquierda {
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .form-group {
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: flex-start;
-    gap: 30px;
-  }
-
-  .form-group label {
-    flex: 1 1 45%;
-    gap: 5px;
-    justify-content: flex-start;
+    min-width: 250px;
   }
 
   .columna-derecha {
-    width: 100%;
-    margin-top: 10px;
-    align-items: stretch;
-  }
-
-  .columna-derecha label {
-    min-width: auto;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .columna-derecha .fecha {
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
-    flex-wrap: nowrap;
-  }
-
-  .columna-derecha .fecha label.Fecha {
-    width: 100%;
-  }
-
-  .columna-derecha .visual {
-    min-width: auto;
-    margin-top: 20px;
-  }
-
-  .tablas-piezas {
-    flex-direction: column;
-    gap: 20px;
-    flex-wrap: wrap;
-    overflow-x: visible;
-  }
-
-  .tablas-piezas table {
-    width: 100%;
+    min-width: 180px;
   }
 }
 
 /* Celulares (menor a 480px) */
 @media (max-width: 479px) {
+  img.logo {
+    width: 100px;
+  }
+
   h2 {
     font-size: 1.1rem;
     margin-top: 40px;
   }
 
-  .form-group {
-    flex-direction: column;
-    gap: 10px;
+  /* Mantener scroll horizontal para que no se rompa layout */
+  .datos {
+    overflow-x: auto;
   }
 
-  .form-group label {
-    flex: 1 1 100%;
-    gap: 5px;
+  .contenedor-izquierda {
+    min-width: 200px;
   }
 
-  .columna-derecha label {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .columna-derecha .fecha {
-    gap: 10px;
-  }
-
-  .columna-derecha .stro label {
-    margin-bottom: 60px;
-  }
-
-  .clear-button {
-    margin-right: 10px;
-  }
-
-  img.logo {
-    width: 100px;
-  }
-
-  .tablas-piezas {
-    flex-wrap: wrap;
-    overflow-x: visible;
+  .columna-derecha {
+    min-width: 150px;
   }
 }
