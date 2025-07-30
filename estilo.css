@@ -155,8 +155,7 @@ h2 {
     .columna-derecha .stro label{
         display:flex;
         justify-content: column;
-        gap: 80px;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
               }
 
       .form-group label span,
