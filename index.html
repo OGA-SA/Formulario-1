@@ -71,7 +71,7 @@
       </thead>
       <tbody>
         
-        <tr><td>Guardabarro del der</td><td><input type="text" id="autocomplete" placeholder="opciones-piezas"/></td><td><input type="text" /></td></tr>
+        <tr><td>Guardabarro del der</td><td><input type="text" id="autocomplete" placeholder="opciones-piezas" autocomplete="off"/></td><td><input type="text" /></td></tr>
         <tr><td>Guardabarro del izq</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
         <tr><td>Parabrisas</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
       </tbody>
@@ -99,23 +99,27 @@
   const sugerencias = ["Manzana", "Mandarina", "Melón", "Mango"];
   const input = document.getElementById("autocomplete");
 
+  let ultimaEntrada = "";
+
   input.addEventListener("input", () => {
     const valor = input.value.toLowerCase();
+
+    // Evita sugerir si el usuario está borrando
+    if (valor.length < ultimaEntrada.length) {
+      ultimaEntrada = valor;
+      return;
+    }
+
     const match = sugerencias.find(opcion => opcion.toLowerCase().startsWith(valor));
     if (match && valor !== match.toLowerCase()) {
       input.value = match;
-      input.setSelectionRange(valor.length, match.length); // selecciona el texto sugerido
+      input.setSelectionRange(valor.length, match.length); // subraya lo sugerido
     }
-  });
 
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight" || e.key === "Tab") {
-      // Acepta sugerencia
-    } else if (e.key.length === 1 || e.key === "Backspace") {
-      // Permite modificar
-    }
+    ultimaEntrada = valor;
   });
 </script>
+  
   <script>
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
