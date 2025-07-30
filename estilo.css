@@ -124,6 +124,7 @@ h2 {
         display: flex;
         justify-content: flex-start;
         border: none;
+        margin-top:30px;
         margin-bottom: 40px;
         gap: 30px;
       }
