@@ -163,6 +163,11 @@ h2 {
         margin-top: 50px;
               }
 
+.columna-derecha .stro label.visual{
+        margin-bottom: 50px;
+        margin-top: 50px;
+              }
+
       .form-group label span,
       .columna-derecha span {
         text-align: left;
