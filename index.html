@@ -210,7 +210,10 @@
           alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
           return;
         }
-
+const confirmar = confirm("Verifica que el número de siniestro esté tipeado correctamente. ¿Deseas continuar?");
+if (!confirmar) {
+  return; // si el usuario cancela, no se genera el PDF
+}
         const pdf = new jsPDF();
         pdf.text(`Taller: ${taller}`, 10, 20);
         pdf.text(`Serie y Número: ${serieNumero}`, 10, 30);
