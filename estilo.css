@@ -155,7 +155,7 @@ h2 {
     .columna-derecha .stro label{
         display:flex;
         justify-content: column;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
               }
 
     .columna-derecha .stro label.stro{
