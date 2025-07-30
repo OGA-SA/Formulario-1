@@ -148,6 +148,7 @@ h2 {
       }
 
        .columna-derecha .visual {
+        margin-top: 30px;
         min-width: 110px;
       }
 
@@ -163,7 +164,7 @@ h2 {
         margin-top: 50px;
               }
 
-.columna-derecha .stro label.visual{
+    .columna-derecha .stro label.visual{
          margin-top: 50px;
               }
 
