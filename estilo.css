@@ -151,7 +151,10 @@ h2 {
         min-width: 110px;
       }
 
-      .columna-derecha .stro {
+          
+    .columna-derecha .stro label{
+        display:flex;
+        justify-content: column;
         gap: 40px;
         margin-bottom: 20px;
               }
