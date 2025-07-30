@@ -113,6 +113,7 @@ h2 {
       .columna-derecha label {
         display: flex;
         text-align: left;
+        justify-content: flex-start;
         border: 1px solid #999;
         padding: 10px;
         border-radius: 4px;
