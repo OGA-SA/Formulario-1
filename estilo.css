@@ -38,13 +38,135 @@ h2 {
   margin-top: 30px;
 }
 
-.contenedor-izquierda {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
+      .contenedor-izquierda {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+      
+            .fila-formulario {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 95%;
+              margin: 20px auto;
+              flex-wrap: wrap;
+            }
+            
+            .form-group {
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              gap: 100px;
+            }
+            
+            .form-group label {
+              display: flex;
+              align-items: center;
+              border: 1px solid #999;
+              padding: 10px;
+              border-radius: 4px;
+              gap: 10px;
+            }
+            
+            .imagen-y-campos {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              align-items: center;
+              margin: 40px auto;
+              gap: 20px;
+              width: 100%;
+            }
+            
+            .canvas-section {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            
+            .canvas {
+              display: flex;
+              align-items: flex-end;
+            }
+            
+            .clear-button {
+              margin-top: 10px;
+              align-self: flex-end;
+              margin-right: 20px;
+            }
+
+      .columna-derecha {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 35px;
+      }
+      
+      .columna-derecha label {
+        display: flex;
+        text-align: left;
+        border: 1px solid #999;
+        padding: 10px;
+        border-radius: 4px;
+        min-width: 200px;
+      }
+      .columna-derecha .fecha {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin-bottom: 40px;
+        gap: 30px;
+      }
+      
+      .columna-derecha .fecha label.Fecha {
+        border: 1px solid #999;
+        border-radius: 4px;
+        padding: 10px;
+        gap: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .fecha label.fecha {
+        width: 80%;
+      }
+      
+      .columna-derecha .fecha label.Fecha input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+
+       .columna-derecha .visual {
+        min-width: 110px;
+      }
+      
+      .form-group label span,
+      .columna-derecha span {
+        text-align: left;
+        min-width: 80px;
+      }
+      
+      .form-group input,
+      .columna-derecha input {
+        border: none;
+        outline: none;
+        padding: 5px;
+        background-color: transparent;
+        font-size: 14px;
+      }
 
 .texto {
   margin-top: 30px;
@@ -53,136 +175,15 @@ h2 {
   width: 95%;
 }
 
-h3 {
-  text-align: center;
-  border: 1px solid black;
-  padding: 8px;
-  margin: 0;
-  width: 100%;
-}
+      h3 {
+        text-align: center;
+        border: 1px solid black;
+        padding: 8px;
+        margin: 0;
+        width: 100%;
+      }
 
-.fila-formulario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 95%;
-  margin: 20px auto;
-  flex-wrap: wrap;
-}
 
-.form-group {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-}
-
-.form-group label {
-  display: flex;
-  align-items: center;
-  border: 1px solid #999;
-  padding: 10px;
-  border-radius: 4px;
-  gap: 10px;
-}
-
-.columna-derecha .fecha {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  margin-bottom: 40px;
-  gap: 30px;
-}
-
-.columna-derecha .fecha label.Fecha {
-  border: 1px solid #999;
-  border-radius: 4px;
-  padding: 10px;
-  gap: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fecha label.fecha {
-  width: 80%;
-}
-
-.columna-derecha .fecha label.Fecha input {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.form-group label span,
-.columna-derecha span {
-  text-align: left;
-  min-width: 80px;
-}
-
-.columna-derecha .visual {
-  min-width: 110px;
-}
-
-.form-group input,
-.columna-derecha input {
-  border: none;
-  outline: none;
-  padding: 5px;
-  background-color: transparent;
-  font-size: 14px;
-}
-
-.imagen-y-campos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  gap: 20px;
-  width: 100%;
-}
-
-.canvas-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.canvas {
-  display: flex;
-  align-items: flex-end;
-}
-
-.clear-button {
-  margin-top: 10px;
-  align-self: flex-end;
-  margin-right: 20px;
-}
-
-.columna-derecha {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 35px;
-}
-
-.columna-derecha label {
-  display: flex;
-  text-align: left;
-  border: 1px solid #999;
-  padding: 10px;
-  border-radius: 4px;
-  min-width: 200px;
-}
 
 table {
   border-collapse: collapse;
@@ -190,28 +191,28 @@ table {
   table-layout: fixed;
 }
 
-th, td {
-  border: 1px solid #000;
-  padding: 7px;
-  text-align: left;
-}
-
-td input {
-  width: 100%;
-  border: none;
-  padding: 5px;
-}
-
-.tablas-piezas {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.tablas-piezas table {
-  width: 45%;
-}
+        th, td {
+          border: 1px solid #000;
+          padding: 7px;
+          text-align: left;
+        }
+        
+        td input {
+          width: 100%;
+          border: none;
+          padding: 5px;
+        }
+        
+        .tablas-piezas {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          margin-top: 30px;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        
+        .tablas-piezas table {
+          width: 45%;
+        }
 
