@@ -6,125 +6,123 @@
   <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-  <img src="Cars.JPG" alt="Logo Cars" class="logo" />
-  <h2>FORMULARIO EXTRA SEGURO</h2>
+  <div id="contenidoPDF">
+    <img src="Cars.JPG" alt="Logo Cars" class="logo" />
+    <h2>FORMULARIO EXTRA SEGURO</h2>
 
-  <div class="datos">
-    <div class="contenedor-izquierda">
-      <form id="dataForm">
-        <div class="fila-formulario">
-          <div class="form-group">
-            <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
-            <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
+    <div class="datos">
+      <div class="contenedor-izquierda">
+        <form id="dataForm">
+          <div class="fila-formulario">
+            <div class="form-group">
+              <label><span>Taller N°:</span> <input type="text" id="taller" required /></label>
+              <label><span>Serie y N°:</span> <input type="text" id="serieNumero" required /></label>
+            </div>
+          </div>
+        </form>
+
+        <div class="imagen-y-campos">
+          <div class="canvas-section">
+            <canvas id="canvas" width="700" height="350"></canvas>
+            <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
           </div>
         </div>
-      </form>
-
-      
-      <div class="imagen-y-campos">
-        <div class="canvas-section">
-          <canvas id="canvas" width="700" height="350"></canvas>
-          <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
-        </div>
       </div>
+
+      <form class="columna-derecha">
+        <div class="fecha">
+          <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
+        </div>
+        <div class="stro">
+          <label class="siniestro"><span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
+          <label class="visual"><span>¿Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
+        </div>
+      </form>
     </div>
 
-    <form class="columna-derecha">
-      <div class="fecha">
-        <label class="Fecha"><span>Fecha:</span> <input type="date" id="fecha" required /></label>
-      </div>
-      <div class="stro">
-        <label class="siniestro"><span>Siniestro:</span> <input type="text" id="siniestro" required /></label>
-        <label class="visual"><span>¿Dificulta visual?:</span> <input type="text" id="dificultadVisual" /></label>
-      </div>
-    </form>
-  </div>
+    <div class="texto">
+      <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES</h3>
+      <h3>ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
+    </div>
 
-  <div class="texto">
-    <h3>SE INFORMAN RUBROS CUYOS PORCENTAJES NO SE TENDRAN EN CUENTA EN FUTURAS RECLAMACIONES</h3>
-    <h3>ANULA / REMPLAZA EXTRA SEGURO DE FECHA:</h3>
-  </div>
+    <div class="tablas-piezas">
+      <table id="tablaPiezas1">
+        <thead>
+          <tr>
+            <th>PIEZA / ACCESORIOS</th>
+            <th>CHAPA</th>
+            <th>PINTURA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Guardabarro del der</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
+          <tr><td>Guardabarro del izq</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
+          <tr><td>Parabrisas</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
+        </tbody>
+      </table>
 
-  <div class="tablas-piezas">
-    <table id="tablaPiezas1">
-      <thead>
-        <tr>
-          <th>PIEZA / ACCESORIOS</th>
-          <th>CHAPA</th>
-          <th>PINTURA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Guardabarro del der</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
-        <tr><td>Guardabarro del izq</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
-        <tr><td>Parabrisas</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
-      </tbody>
-    </table>
-
-    <table id="tablaPiezas2">
-      <thead>
-        <tr>
-          <th>PIEZA / ACCESORIOS</th>
-          <th>CHAPA</th>
-          <th>PINTURA</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        <tr><td>Guardabarro del der</td><td><input type="text" id="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr>
-        <tr><td>Guardabarro del izq</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
-        <tr><td>Parabrisas</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
-      </tbody>
-    </table>
-          <datalist id="opciones-piezas">
+      <table id="tablaPiezas2">
+        <thead>
+          <tr>
+            <th>PIEZA / ACCESORIOS</th>
+            <th>CHAPA</th>
+            <th>PINTURA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Guardabarro del der</td><td><input type="text" id="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr>
+          <tr><td>Guardabarro del izq</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
+          <tr><td>Parabrisas</td><td><input type="text" name="piezas" list="opciones-piezas"/></td><td><input type="text" /></td></tr>
+        </tbody>
+      </table>
+      <datalist id="opciones-piezas">
         <option value="Manzana">
         <option value="Mandarina">
         <option value="Melón">
         <option value="Mango">
-</datalist>
-  </div>
-  <form id="boton">
-      <div style="text-align: center; margin: 30px 0;">
-        <button type="submit">Generar PDF</button>
-   </form>
+      </datalist>
+    </div>
   </div>
 
-  <!-- LIBRERÍAS PDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <form id="boton">
+    <div style="text-align: center; margin: 30px 0;">
+      <button type="submit">Generar PDF</button>
+    </div>
+  </form>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <!-- SCRIPT FUNCIONAL -->
 
-<script>
-  const sugerencias = ["Manzana", "Mandarina", "Melón", "Mango"];
-  const input = document.getElementById("autocomplete");
+  <script>
+    const sugerencias = ["Manzana", "Mandarina", "Melón", "Mango"];
+    const input = document.getElementById("autocomplete");
 
-  let ultimaEntrada = "";
+    let ultimaEntrada = "";
 
-  input.addEventListener("input", () => {
-    const valor = input.value.toLowerCase();
+    input.addEventListener("input", () => {
+      const valor = input.value.toLowerCase();
 
-    // Evita sugerir si el usuario está borrando
-    if (valor.length < ultimaEntrada.length) {
+      // Evita sugerir si el usuario está borrando
+      if (valor.length < ultimaEntrada.length) {
+        ultimaEntrada = valor;
+        return;
+      }
+
+      const match = sugerencias.find(opcion => opcion.toLowerCase().startsWith(valor));
+      if (match && valor !== match.toLowerCase()) {
+        input.value = match;
+        input.setSelectionRange(valor.length, match.length); // subraya lo sugerido
+      }
+
       ultimaEntrada = valor;
-      return;
-    }
+    });
+  </script>
 
-    const match = sugerencias.find(opcion => opcion.toLowerCase().startsWith(valor));
-    if (match && valor !== match.toLowerCase()) {
-      input.value = match;
-      input.setSelectionRange(valor.length, match.length); // subraya lo sugerido
-    }
-
-    ultimaEntrada = valor;
-  });
-</script>
-  
   <script>
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     let baseImageData = null;
-    let userHasDrawn = false;
 
     const image = new Image();
     image.src = "parabrisa.png";
@@ -162,7 +160,6 @@
       ctx.stroke();
       ctx.beginPath();
       ctx.moveTo(pos.x, pos.y);
-      userHasDrawn = true;
     }
 
     function endDraw(evt) {
@@ -184,62 +181,67 @@
     function clearCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-      userHasDrawn = false;
     }
 
     window.clearCanvas = clearCanvas;
 
-    window.onload = () => {
-      const { jsPDF } = window.jspdf;
+    // Generar PDF con html2pdf y validaciones
+    document.getElementById("boton").addEventListener("submit", function (event) {
+      event.preventDefault();
 
-      document.getElementById("boton").addEventListener("submit", function (e) {
-        e.preventDefault();
+      // Obtener valores
+      const taller = document.getElementById("taller").value.trim();
+      const serieNumero = document.getElementById("serieNumero").value.trim();
+      const siniestro = document.getElementById("siniestro").value.trim();
+      const fecha = document.getElementById("fecha").value.trim();
+      const dificultadVisual = document.getElementById("dificultadVisual").value.trim();
 
-        const taller = document.getElementById("taller").value.trim();
-        const serieNumero = document.getElementById("serieNumero").value.trim();
-        const siniestro = document.getElementById("siniestro").value.trim();
-        const fecha = document.getElementById("fecha").value.trim();
-        const dificultadVisual = document.getElementById("dificultadVisual").value.trim();
+      // Validar campos obligatorios
+      if (!taller || !serieNumero || !siniestro || !fecha) {
+        alert("Por favor complete todos los campos antes de generar el PDF.");
+        return;
+      }
 
-        if (!taller || !serieNumero || !siniestro || !fecha) {
-          alert("Por favor complete todos los campos antes de generar el PDF.");
-          return;
-        }
+      // Validar si el canvas está vacío
+      const context = canvas.getContext("2d");
+      const pixelBuffer = new Uint32Array(
+        context.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+      );
+      // El canvas está en blanco si todos los píxeles son transparentes o blancos
+      // Usamos la condición que me diste (que no haya ningún color distinto de 0)
+      const isCanvasBlank = !pixelBuffer.some(color => color !== 0);
 
-        if (userHasDrawn && !dificultadVisual) {
-          alert("Si realizaste un dibujo, completá el campo 'Dificulta visual'.");
-          return;
-        }
-const confirmar = confirm("Verifica que el número de siniestro esté tipeado correctamente. ¿Deseas continuar?");
-if (!confirmar) {
-  return; // si el usuario cancela, no se genera el PDF
-}
-        const pdf = new jsPDF();
-        pdf.text(`Taller: ${taller}`, 10, 20);
-        pdf.text(`Serie y Número: ${serieNumero}`, 10, 30);
-        pdf.text(`Siniestro: ${siniestro}`, 10, 40);
-        pdf.text(`Fecha: ${fecha}`, 10, 50);
-        pdf.text(`Dificultad visual: ${dificultadVisual}`, 10, 60);
+      if (!isCanvasBlank && !dificultadVisual) {
+        alert("Por favor describa la dificultad visual asociada al dibujo.");
+        return;
+      }
 
-        try {
-          const imgData = canvas.toDataURL("image/png");
-          pdf.addImage(imgData, "PNG", 10, 70, 180, 120);
-        } catch (error) {
-          alert("Error al convertir el canvas. Asegúrate de usar Live Server.");
-          return;
-        }
+      // Confirmación final antes de generar PDF
+      const confirmar = confirm("Verifica que el número de siniestro esté tipeado correctamente. ¿Deseas continuar?");
+      if (!confirmar) {
+        return;
+      }
 
-        const table = document.getElementById("tablaPiezas1").cloneNode(true);
-        const inputs = table.querySelectorAll("input");
-        inputs.forEach((input) => {
-          const td = input.parentElement;
-          td.textContent = input.value;
+      // Ocultar botones para que no salgan en el PDF
+      const botones = document.querySelectorAll("button");
+      botones.forEach(btn => btn.style.display = "none");
+
+      // Generar PDF con html2pdf
+      html2pdf()
+        .from(document.getElementById("contenidoPDF"))
+        .set({
+          margin: 0.5,
+          filename: "formulario_con_dibujo.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+        })
+        .save()
+        .then(() => {
+          // Mostrar botones nuevamente
+          botones.forEach(btn => btn.style.display = "inline-block");
         });
-
-        pdf.autoTable({ html: table, startY: 195 });
-        pdf.save("formulario_con_dibujo.pdf");
-      });
-    };
+    });
   </script>
 </body>
 </html>
