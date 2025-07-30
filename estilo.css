@@ -108,7 +108,7 @@ h2 {
         align-items: center;
         justify-content: center;
         height: 100%;
-        gap: 35px;
+        
       }
       
       .columna-derecha label {
@@ -118,6 +118,7 @@ h2 {
         padding: 10px;
         border-radius: 4px;
         min-width: 200px;
+        gap: 35px;
       }
       .columna-derecha .fecha {
         display: flex;
