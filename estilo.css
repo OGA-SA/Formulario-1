@@ -151,8 +151,8 @@ h2 {
         min-width: 110px;
       }
 
-      .stro{
-        gap:30px;
+      .stro label{
+        gap:40px;
       }
 
       .form-group label span,
