@@ -21,8 +21,7 @@ img.logo {
 }
 
 h2 {
-  display: flex;
-  justify-content: center;
+  margin: 100px auto 0 auto; /* margen superior y centrado horizontal */
   text-align: center;
   margin-top: 100px;
   background-color: #ccc;
