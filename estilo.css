@@ -152,12 +152,9 @@ h2 {
       }
 
       .columna-derecha .stro {
-         display: flex;
-        flex-direction: column;
         gap: 40px;
         margin-bottom: 20px;
-        align-items: stretch;
-      }
+              }
 
       .form-group label span,
       .columna-derecha span {
