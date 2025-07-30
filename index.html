@@ -76,9 +76,10 @@ l<!DOCTYPE html>
       </tbody>
     </table>
   </div>
-
-  <div style="text-align: center; margin: 30px 0;">
-    <button type="submit">Generar PDF</button>
+  <form id="boton">
+      <div style="text-align: center; margin: 30px 0;">
+        <button type="submit">Generar PDF</button>
+   </form>
   </div>
 
   <!-- LIBRERÍAS PDF -->
@@ -158,7 +159,7 @@ l<!DOCTYPE html>
     window.onload = () => {
       const { jsPDF } = window.jspdf;
 
-      document.getElementById("dataForm").addEventListener("submit", function (e) {
+      document.getElementById("boton").addEventListener("submit", function (e) {
         e.preventDefault();
 
         const taller = document.getElementById("taller").value.trim();
