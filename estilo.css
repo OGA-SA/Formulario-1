@@ -15,20 +15,23 @@ html, body {
 }
 
 img.logo {
-  position: static; /* quitamos absolute para que no se salga del flujo */
+  position: static; /* quitamos absolute */
   margin: 25px auto 0 auto;
   display: block;
   width: 140px;
+  max-width: 100%;
+  height: auto;
 }
 
 h2 {
   text-align: center;
-  margin: 100px auto 0 auto; /* centrado horizontal con margen automático */
+  margin: 100px auto 0 auto;
   background-color: #ccc;
   padding: 10px;
   border-radius: 8px;
   width: 95%;
   max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .datos {
@@ -37,10 +40,11 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 15px;
+  gap: 10px; /* reducido para evitar overflow */
   margin-top: 30px;
   padding: 0 10px;
   box-sizing: border-box;
+  flex-wrap: wrap; /* permite que las columnas bajen en pantallas pequeñas */
 }
 
 .contenedor-izquierda {
@@ -49,6 +53,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .fila-formulario {
@@ -67,6 +73,8 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 100px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group label {
@@ -76,6 +84,9 @@ h2 {
   padding: 10px;
   border-radius: 4px;
   gap: 10px;
+  max-width: 100%;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .imagen-y-campos {
@@ -86,6 +97,7 @@ h2 {
   margin: 40px auto;
   gap: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .canvas-section {
@@ -114,6 +126,8 @@ h2 {
   justify-content: flex-start;
   margin-top: 20px;
   height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .columna-derecha label {
@@ -125,6 +139,9 @@ h2 {
   border-radius: 4px;
   min-width: 200px;
   gap: 35px;
+  max-width: 100%;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .columna-derecha .fecha {
@@ -133,6 +150,7 @@ h2 {
   border: none;
   margin-bottom: 40px;
   gap: 30px;
+  flex-wrap: wrap; /* para que los items bajen en pantallas chicas */
 }
 
 .columna-derecha .fecha label.Fecha {
@@ -143,23 +161,30 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 .columna-derecha .fecha label.Fecha input {
   border: none;
   outline: none;
   background-color: transparent;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .columna-derecha .visual {
   margin-top: 30px;
   min-width: 110px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .columna-derecha .stro label {
   display: flex;
   justify-content: column;
   margin-bottom: 100px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .columna-derecha .stro label.siniestro {
@@ -184,6 +209,8 @@ h2 {
   padding: 5px;
   background-color: transparent;
   font-size: 14px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .texto {
@@ -191,6 +218,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   width: 95%;
+  box-sizing: border-box;
 }
 
 h3 {
@@ -199,6 +227,7 @@ h3 {
   padding: 8px;
   margin: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 table {
@@ -207,6 +236,9 @@ table {
   table-layout: fixed;
   max-width: 100%;
   overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 th, td {
@@ -219,6 +251,7 @@ td input {
   width: 100%;
   border: none;
   padding: 5px;
+  box-sizing: border-box;
 }
 
 .tablas-piezas {
@@ -226,12 +259,16 @@ td input {
   justify-content: center;
   gap: 40px;
   margin-top: 30px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* para evitar overflow, se puede cambiar en media queries */
   width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .tablas-piezas table {
   width: 45%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* ==== MEDIA QUERIES PARA RESPONSIVE ==== */
@@ -247,6 +284,8 @@ td input {
     margin: 20px auto 0 auto;
     display: block;
     width: 120px;
+    max-width: 100%;
+    height: auto;
   }
 
   h2 {
@@ -260,6 +299,7 @@ td input {
     width: 95%;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: nowrap;
   }
 
   .contenedor-izquierda {
@@ -296,6 +336,7 @@ td input {
     flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
+    flex-wrap: nowrap;
   }
 
   .columna-derecha .fecha label.Fecha {
@@ -310,6 +351,8 @@ td input {
   .tablas-piezas {
     flex-direction: column;
     gap: 20px;
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 
   .tablas-piezas table {
@@ -353,5 +396,10 @@ td input {
 
   img.logo {
     width: 100px;
+  }
+
+  .tablas-piezas {
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 }
