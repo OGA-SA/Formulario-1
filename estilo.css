@@ -16,8 +16,8 @@ html, body {
 
 img.logo {
   position: static;
-  margin: 25px auto 0 auto;
-  display: block;
+  margin: 25px 0 0 0; /* margen superior de 25px, sin márgenes automáticos */
+  display: block; /* podés mantenerlo si querés que se comporte como bloque */
   width: 140px;
   max-width: 100%;
   height: auto;
