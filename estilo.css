@@ -56,9 +56,8 @@ img.logo {
 h2 {
   text-align: center;
   margin: 0 auto 20px auto;
-  background-color: #ccc;
+  text-decoration: underline;
   padding: 10px;
-  border-radius: 8px;
   width: 95%;
   max-width: 1200px;
   margin-top: 10px;
