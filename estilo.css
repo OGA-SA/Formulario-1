@@ -130,14 +130,12 @@ h3 {
   justify-content: center;
   gap: 10px;
   padding: 10px;
-  border: 1px solid #999;
-  border-radius: 4px;
   text-align: center;
 }
-.form-group input,
-.columna-derecha input {
+.form-group input {
+  border: 1px solid #999;
+  border-radius: 4px;
   padding: 2px 4px;
-  border: none;
   font: inherit;            /* Igual fuente que el label */
   width: auto;              /* Que no ocupe todo el contenedor */
   min-width: 10ch;           /* Ancho mínimo en caracteres */
