@@ -19,12 +19,11 @@
       <div class="datos">
         <div class="contenedor-izquierda">
           <form id="dataForm">
-            <div class="fila-formulario">
-              <div class="form-group">
+             <div class="form-group">
                 <label><span>SINIESTRO</span> <input type="text" id="siniestro" required /></label>
                 <label class="Fecha"><span>FECHA</span> <input type="date" id="fecha" required /></label>
               </div>
-            </div>
+            
           </form>
       </div>
           <div class="auto">
@@ -76,6 +75,11 @@
             <div class="canvas-section">
               <canvas id="canvas" width="700" height="350"></canvas>
               <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
+             </div>
+            <div class="notas">
+              <h2>Observaciones</h2>
+              <textarea class="notas" placeholder="Escribe tus observaciones aquí..."></textarea>
+            
             </div>
           </div>      
       </div>
