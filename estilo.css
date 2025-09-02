@@ -199,7 +199,8 @@ table {
 
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
-  min-width: 150px; /* ajustá según necesites */
+  flex: 1;  /* se estira dentro de la celda */
+  min-width: 60px;
 }
 
 th, td {
@@ -231,7 +232,7 @@ td input {
   vertical-align: top;
   margin-top: 0;
 }
-.noti{
+.noti {
   width; 95%;
 }
 
