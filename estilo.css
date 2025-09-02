@@ -150,7 +150,7 @@ h3 {
 .observaciones{
   width: 95%;
   display: flex;
-  justify-content: column;
+  justify-content: row;
 }
 
 .imagen-y-campos {
