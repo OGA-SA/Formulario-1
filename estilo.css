@@ -147,6 +147,12 @@ h3 {
   vertical-align: middle;
 }
 
+.observaciones{
+  width: 95%;
+  display: flex;
+  justify-content: column;
+}
+
 .imagen-y-campos {
   display: flex;
   justify-content: center;
