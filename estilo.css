@@ -105,9 +105,11 @@ h3 {
 .auto2{
   width: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   gap: 40px;
-}
+  }
+
 .auto label{
   gap: 30px;
 }
