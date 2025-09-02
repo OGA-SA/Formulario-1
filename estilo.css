@@ -220,8 +220,8 @@ td input {
   overflow-y: auto;
 }
 
-.tablas-piezas table {
-  width: 45%;
+.tabla-piezas1{
+  width: 100%;
   max-width: 100%;
   vertical-align: top;
   margin-top: 0;
