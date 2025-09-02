@@ -189,7 +189,7 @@ h3 {
 table {
   border-collapse: collapse;
   margin: 0 auto;
-  table-layout: fixed;
+  table-layout: auto;
   max-width: 100%;
   overflow-x: auto;
   display: block;
