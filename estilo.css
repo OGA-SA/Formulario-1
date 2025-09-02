@@ -234,7 +234,8 @@ td input {
   margin-top: 0;
 }
 .noti {
-  width; 95%;
+  width: 95%;
+  border: none;
 }
 
 .boton {
