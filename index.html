@@ -17,14 +17,12 @@
 
 
       <div class="datos">
-        <div class="contenedor-izquierda">
           <form id="dataForm">
              <div class="form-group">
                 <label><span>SINIESTRO</span> <input type="text" id="siniestro" required /></label>
                 <label class="Fecha"><span>FECHA</span> <input type="date" id="fecha" required /></label>
               </div>
-            
-          </form>
+            </form>
       </div>
           <div class="auto">
             <div class="auto1">
@@ -36,7 +34,7 @@
              <label><span>MATRICULA</span> <input type="text" id="siniestro" required /></label>
             </div>
         </div>
-      </div> 
+      
 
       <div class="texto">
         <h3>SE ACONSEJA EXCLUIR DE COBERTURA A ESTE VEHICULO ATENTO A QUE PRESENTA<br>
@@ -70,19 +68,20 @@
           <tr><td><input class="autocomplete" type="text" autocomplete="off" spellcheck="false" placeholder="Escribe..."/></td><td><input type="text"/></td><td><input type="text" /></td></tr>
         </tbody>
       </table>
+    </div>
+      
     <div class="Observaciones">
           <div class="imagen-y-campos">
             <div class="canvas-section">
               <canvas id="canvas" width="700" height="350"></canvas>
               <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
              </div>
+          </div> 
             <div class="notas">
               <h2>Observaciones</h2>
-              <textarea class="notas" placeholder="Escribe tus observaciones aquí..."></textarea>
-            
-            </div>
-          </div>      
-      </div>
+              <textarea class="nota" placeholder="Escribe tus observaciones aquí..."></textarea>
+            </div>         
+    </div>
 
         
         <div class="noti">
@@ -97,12 +96,12 @@
         </form>
       
     </div>
-    
+    </div>
   
 
 <!-- Librerías necesarias -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script> src="https://graph.microsoft.com/v1.0/me/drive/root:/Extra Seguro/miArchivo.pdf:/content"</script>
+<script src="https://graph.microsoft.com/v1.0/me/drive/root:/Extra Seguro/miArchivo.pdf:/content"></script>
 
 <!-- Loader dinámico de MSAL -->
 <script>
