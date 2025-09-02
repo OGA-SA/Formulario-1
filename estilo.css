@@ -85,7 +85,7 @@ h3 {
   max-width: 1200px;
   margin: 30px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: column;
   gap: 20px;
 }
 
