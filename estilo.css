@@ -74,12 +74,9 @@ h2, .texto, .header, h3 {
 h3 {
   text-align: center;
   border: 1px solid black;
-  padding: 8px;
+  padding: 10px;
 }
 
-.texto {
-  margin-bottom: 20px;
-}
 
 .datos {
   width: 95%;
