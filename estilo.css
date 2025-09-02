@@ -106,9 +106,12 @@ h3 {
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
 }
-  
+.auto label{
+  gap: 30px;
+}
+
 .form-group {
   display: flex;
   flex-direction: row;
