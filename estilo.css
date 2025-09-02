@@ -96,7 +96,6 @@ h3 {
   border: 1px solid #999;
   border-radius: 4px;
   padding: 40px;
-  gap: 20px;
   justify-content: center;
   margin: 20px auto;
 } 
@@ -106,6 +105,7 @@ h3 {
   width: 100%;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
 }
   
 .form-group {
