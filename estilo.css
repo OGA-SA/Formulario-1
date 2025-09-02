@@ -86,6 +86,7 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
+
 .auto{
   width: 95%
   display: flex;
@@ -100,7 +101,7 @@ h3 {
 
 .auto1,
 .auto2{
-  width: 100%;
+  width: 95%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
