@@ -111,14 +111,17 @@ h3 {
 .auto label{
   gap: 30px;
 }
-
-.form-group {
+.dataform{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 30px;
   width: 100%;
+}
+  
+.form-group {
+   width: 30%;
 }
 .form-group siniestro{
   width: 40%;
