@@ -158,8 +158,10 @@ h3 {
 }
 
 .imagen-y-campos {
-  margin: 40px auto;
-  gap: 20px;
+   width: 40%;
+}
+
+.notas{
   width: 50%;
 }
 
