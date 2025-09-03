@@ -120,6 +120,9 @@ h3 {
   gap: 30px;
   width: 100%;
 }
+.form-group siniestro{
+  width: 50%;
+}
 
 .form-group label {
   min-width: 100px;
