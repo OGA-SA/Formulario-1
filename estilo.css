@@ -93,9 +93,9 @@ h3 {
   flex-direction: column;
   border: 1px solid #999;
   border-radius: 4px;
-  gap: 40px;
   padding:10px;
   justify-content: center;
+  align-items:center;
   margin: 20px auto;
 } 
 
