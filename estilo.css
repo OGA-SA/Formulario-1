@@ -101,12 +101,10 @@ h3 {
 
 .auto1 label,
 .auto2 label{
-  width: 95%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  }
+    }
 
 
 .dataform{
