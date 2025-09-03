@@ -158,16 +158,13 @@ h3 {
   gap: 10px;
 }
 
-.imagen-y-campos {
-   width: 40%;
-}
 
 .notas{
   width: 50%;
 }
 
 .canvas-section {
-  width: 45%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
