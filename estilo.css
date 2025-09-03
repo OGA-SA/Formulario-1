@@ -158,12 +158,9 @@ h3 {
 }
 
 .imagen-y-campos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 40px auto;
   gap: 20px;
-  width: 100%;
+  width: 50%;
 }
 
 .canvas-section {
