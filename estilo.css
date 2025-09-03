@@ -99,8 +99,8 @@ h3 {
   margin: 20px auto;
 } 
 
-.auto1,
-.auto2{
+.auto1 label,
+.auto2 label{
   width: 95%;
   flex-direction: column;
   justify-content: space-between;
@@ -108,9 +108,7 @@ h3 {
   gap: 40px;
   }
 
-.auto label{
-  gap: 30px;
-}
+
 .dataform{
   display: flex;
   flex-direction: row;
