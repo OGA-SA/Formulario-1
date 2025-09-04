@@ -94,7 +94,7 @@ h3 {
   border: 1px solid #999;
   border-radius: 4px;
   padding:10px;
-  justify-content: center;
+  justify-content: space-between;
   align-items:center;
   margin: 20px auto;
 } 
