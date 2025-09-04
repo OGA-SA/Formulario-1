@@ -97,14 +97,16 @@ h3 {
   justify-content: space-between;
   align-items:center;
   margin: 20px auto;
+  gap: 10px;
 } 
 
 .auto1 label,
 .auto2 label{
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 15px 10px;
+  gap: 20px 
     }
 
 
