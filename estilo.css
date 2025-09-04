@@ -113,7 +113,9 @@ h3 {
   display: flex;
   gap: 5px; 
     }
-
+.texto{
+  margin: 15px auto;
+}
 
 .dataform{
   display: flex;
