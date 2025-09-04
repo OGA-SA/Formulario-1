@@ -100,13 +100,17 @@ h3 {
   gap: 10px;
 } 
 
+.auto1,
+.auto2 {
+  display: flex;             /* coloca los labels en fila */
+  justify-content: space-between;
+  gap: 20px;                 /* 👉 espacio horizontal entre labels */
+}
+
 .auto1 label,
 .auto2 label{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px 
+  gap: 5px; 
     }
 
 
