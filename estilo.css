@@ -104,7 +104,7 @@ h3 {
 .auto2 {
   display: flex;             /* coloca los labels en fila */
   justify-content: space-between;
-  gap: 20px;                 /* 👉 espacio horizontal entre labels */
+  gap: 45px;                 /* 👉 espacio horizontal entre labels */
 }
 
 .auto1 label,
