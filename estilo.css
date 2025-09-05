@@ -97,6 +97,7 @@ h3 {
   padding:10px;
   justify-content: space-between;
   align-items:center;
+  text-align: center;
   gap: 30px;
 } 
 
