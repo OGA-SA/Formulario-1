@@ -207,7 +207,7 @@ h3 {
 
 .canvas-section {
   flex: 1;              /* ocupa espacio proporcional */
-  max-width: 60%;       /* que no sea gigante */
+  max-width: 50%;       /* que no sea gigante */
 }
 
 .canvas {
