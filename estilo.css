@@ -166,7 +166,7 @@ h3 {
   display: flex;              /* 👈 activa el modo fila */
   flex-direction: row;        /* 👈 asegura que sea horizontal */
   justify-content: space-between; /* 👈 deja espacio entre los 2 */
-  align-items: flex-start;    /* 👈 alinea arriba (no centrado vertical) */
+  align-items: stretch;   /* 👈 alinea arriba (no centrado vertical) */
   gap: 10px;                  /* 👈 separación entre los divs */
   width: 95%;
   max-width: 95%;
@@ -188,10 +188,10 @@ h3 {
 
 .notas .nota {
   width: 100%;
-  height: calc(7 * 1.5em);  /* 7 renglones de altura (1.5em = altura de línea) */
-  line-height: 1.5em;       /* altura de cada línea */
+  flex: 1;               /* 🔹 ocupa toda la altura disponible */
+  line-height: 1.5em;       
   padding: 10px;
-  resize: vertical;
+  resize: vertical;      
   border: 1px solid #999;
   border-radius: 4px;
   background-image: repeating-linear-gradient(
@@ -199,7 +199,7 @@ h3 {
     transparent,
     transparent 1.4em,
     #ccc 1.5em
-  ); /* 🔹 líneas tipo cuaderno */
+  );
   font-family: 'Comic Sans MS', sans-serif;
   font-size: 1em;
   overflow: auto;
@@ -210,12 +210,12 @@ h3 {
   max-width: 50%;       /* que no sea gigante */
 }
 
-.canvas {
-  display: flex;
-  align-items: flex-end;
+.canvas-section canvas {
   width: 100%;
-  overflow-x: auto;
+  height: 100%;           /* 🔹 ocupa toda la altura del contenedor */
+  object-fit: contain;    /* 🔹 mantiene proporción */
 }
+
 
 .clear-button {
   margin-top: 8px;
