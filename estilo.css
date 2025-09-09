@@ -210,22 +210,21 @@ table {
   margin: 0 auto;
   table-layout: auto;
   max-width: 100%;
-  overflow-x: auto;
-  display: block;
-  white-space: nowrap;
   width: 100%;
 }
 
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
   flex: 1;
-  min-width: 60px;
+  min-width: 100px;
 }
 
 th, td {
   border: 1px solid #000;
   padding: 5px;
   text-align: left;
+  white-space: normal;  /* ✅ permite salto de línea si es necesario */
+  word-wrap: break-word; /* ✅ asegura que el texto no se corte */
 }
 
 td input {
