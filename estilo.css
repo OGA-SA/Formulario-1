@@ -210,14 +210,14 @@ table {
   margin: 0 auto;
   table-layout: auto;
   max-width: 100%;
-  width: 100%;
+  width: 95%;
    white-space: nowrap;
 }
 
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
   flex: 1;
-  min-width: 120px;
+  min-width: 100px;
 }
 
 th, td {
@@ -252,6 +252,7 @@ td input {
   vertical-align: top;
   margin-top: 0;
 }
+
 .noti h3 {
   width: 95%;
   border: none;
