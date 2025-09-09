@@ -64,20 +64,18 @@ h2 {
   margin-top: 10px;
   }
 
-/* AGRUPAR LOS ELEMENTOS CENTRALES */
 h2, .texto, .header, h3 {
   width: 95%;
   max-width: 1200px;
   margin: auto;
 }
 
-
 h3 {
   text-align: center;
   border: 1px solid black;
   padding: 20px;
+  margin: 20px auto; /* ✅ centrado igual que auto */
 }
-
 
 .datos {
   width: 95%;
@@ -88,17 +86,20 @@ h3 {
   gap: 20px;
 }
 
-.auto{
+/* ✅ Centrar el div .auto y dar espacio entre auto1 y auto2 */
+.auto {
   width: 95%;
+  max-width: 1000px;
+  margin: 0 auto; /* ✅ centrado igual que h3 */
   display: flex;
   flex-direction: column;
   border: 1px solid #999;
   border-radius: 4px;
-  padding:10px;
+  padding: 10px;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   text-align: center;
-  gap: 30px;
+  gap: 30px; /* ✅ espacio entre auto1 y auto2 */
 } 
 
 .auto1,
@@ -106,18 +107,20 @@ h3 {
   display: flex;             /* coloca los labels en fila */
   justify-content: space-between;
   gap: 45px;                 /* 👉 espacio horizontal entre labels */
+  width: 100%;
 }
 
 .auto1 label,
-.auto2 label{
+.auto2 label {
   display: flex;
   gap: 5px; 
-    }
-.texto{
+}
+
+.texto {
   margin: 40px auto;
 }
 
-.dataform{
+.dataform {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -127,7 +130,7 @@ h3 {
 }
   
 
-.form-group siniestro{
+.form-group siniestro {
   width: 30%;
 }
 
@@ -144,11 +147,11 @@ h3 {
   border: 1px solid #999;
   border-radius: 4px;
   padding: 2px 4px;
-  font: inherit;            /* Igual fuente que el label */
-  width: auto;              /* Que no ocupe todo el contenedor */
-  min-width: 10ch;           /* Ancho mínimo en caracteres */
+  font: inherit;
+  width: auto;
+  min-width: 10ch;
   max-width: 100%; 
-  vertical-align: middle;/* Evita desbordes */
+  vertical-align: middle;
 }
 
 .form-group label span {
@@ -157,7 +160,7 @@ h3 {
   vertical-align: middle;
 }
 
-.observaciones{
+.observaciones {
   width: 95%;
   display: flex;
   flex-direction: row;
@@ -166,8 +169,7 @@ h3 {
   gap: 10px;
 }
 
-
-.notas{
+.notas {
   width: 50%;
 }
 
@@ -214,7 +216,7 @@ table {
 
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
-  flex: 1;  /* se estira dentro de la celda */
+  flex: 1;
   min-width: 60px;
 }
 
@@ -228,7 +230,7 @@ td input {
   width: 100%;
   border: none;
   padding: 5px;
-   flex: 1; 
+  flex: 1; 
 }
 
 .tablas-piezas {
@@ -242,7 +244,7 @@ td input {
   overflow-y: auto;
 }
 
-.tabla-piezas1{
+.tabla-piezas1 {
   width: 100%;
   max-width: 100%;
   vertical-align: top;
@@ -266,11 +268,10 @@ td input {
 }
 
 /* Estilos aplicados SOLO cuando se genera el PDF */
-
 .modo-pdf #contenidoPDF {
   width: 210mm;
-  min-height: 297mm; /* límite real A4 */
-  margin: 0 auto; /* centrado horizontal */
+  min-height: 297mm;
+  margin: 0 auto;
   margin-top: 0;
   padding: 10mm;
   background: white;
@@ -280,7 +281,7 @@ td input {
 
 @media print {
   body {
-    -webkit-print-color-adjust: exact; /* mantiene colores */
+    -webkit-print-color-adjust: exact;
   }
 }
 
@@ -288,21 +289,20 @@ td input {
   page-break-inside: avoid;
 }
 
-.modo-pdf body{
+.modo-pdf body {
   margin: 0;
 }
 
-/* Centrar el contenedor .datos */
 .modo-pdf .datos {
   display: grid;
-  grid-template-columns: 1fr 0.9fr; /* Proporción más segura */
+  grid-template-columns: 1fr 0.9fr;
   align-items: start;
-  column-gap: 15px; /* reducir separación */
+  column-gap: 15px;
   width: 100%;
-  box-sizing: border-box; /* evitar que padding sume ancho extra */
+  box-sizing: border-box;
   font-size: 10pt;
   margin-left: 25px;
- }
+}
  
 .modo-pdf .contenedor-izquierda,
 .modo-pdf .columna-derecha {
@@ -312,13 +312,12 @@ td input {
   box-sizing: border-box;
 }
 
-.modo-pdf .fila-formulario label{
+.modo-pdf .fila-formulario label {
   height: 25px;
 }
 
-/* 🔹 ESPACIO INTERNO EN TODOS LOS LABELS */
 .modo-pdf label {
-  padding: 6px 10px; /* espacio interno uniforme */
+  padding: 6px 10px;
   box-sizing: border-box;
 }
 
@@ -327,9 +326,8 @@ td input {
   width: 100%;
   margin-bottom: -20px;
 }
-.modo-pdf .columna-derecha .fecha{
+.modo-pdf .columna-derecha .fecha {
   margin-left: 25px;
-
 }
 
 .modo-pdf .columna-derecha label {
@@ -337,25 +335,24 @@ td input {
   justify-content: flex-start;
   text-align: center;
   margin-right: 10px;
-  padding:10px;
+  padding: 10px;
   gap: 40px;
-  height: 25px; /* 🔹 misma altura */
-  align-items: center; /* 🔹 centrado vertical */
+  height: 25px;
+  align-items: center;
 }
 
-/* 🔹 Ajuste especial para SINIESTRO */
 .modo-pdf label.siniestro {
   display: flex;
-  flex-wrap: nowrap;     /* ✅ todo en una sola línea */
-  white-space: nowrap;   /* ✅ no permite salto de línea */
+  flex-wrap: nowrap;
+  white-space: nowrap;
   gap: 8px;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px 12px; /* espacio interno */
+  padding: 8px 12px;
   border: 1px solid #999;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 100%;           /* ocupa todo el ancho disponible */
+  width: 100%;
 }
 .modo-pdf label.siniestro span {
   min-width: 40px;
@@ -367,7 +364,7 @@ td input {
   box-sizing: border-box;
 }
 
-.modo-pdf .columna-derecha input{
+.modo-pdf .columna-derecha input {
   padding: 2px 4px;
 }
 
@@ -376,10 +373,10 @@ td input {
 }
 
 .modo-pdf .columna-derecha .fecha label.Fecha {
-  margin-left: 40px; /* 🔹 separación de Serie y Número */
+  margin-left: 40px;
 }
 
-.modo-pdf .fila-formulario{
+.modo-pdf .fila-formulario {
   margin-left: 25px;
 }
 
@@ -389,7 +386,7 @@ td input {
   height: auto;
 }
 
-.modo-pdf .form-group{
+.modo-pdf .form-group {
   width: 100%;
   margin-left: 20px;
 }
@@ -404,13 +401,11 @@ td input {
 }
 
 .modo-pdf label span {
-  font-size: 0.9em; /* un poco más chico */
+  font-size: 0.9em;
   margin-right: 1px;
 }
-  margin: 0; /* Quita márgenes innecesarios */
-}
 
-.modo-pdf input{
+.modo-pdf input {
   font-size: 8pt;
 }
 
@@ -423,7 +418,7 @@ td input {
   vertical-align: middle;
 }
 
-.modo-pdf .columna-derecha .visual{
+.modo-pdf .columna-derecha .visual {
   white-space: nowrap;
 }
 
@@ -432,26 +427,24 @@ td input {
   height: auto;
 }
 
-.modo-pdf .texto{
+.modo-pdf .texto {
   margin-top: -20px;
 }
 
-.modo-pdf h3{
+.modo-pdf h3 {
   font-size: 9pt;
-  }
+}
 
-/* Tablas completas y sin cortes */
 .modo-pdf table {
   width: 100%;
   border-collapse: collapse;
   table-layout: auto;
   word-break: break-word;
   page-break-inside: auto;
-  
 }
 
-.modo-pdf tr{
-  page-break-inside: avoid; /* ❌ No cortar dentro de una fila */
+.modo-pdf tr {
+  page-break-inside: avoid;
   page-break-after: auto;
 }
 
@@ -462,14 +455,13 @@ td input {
   white-space: normal;
 }
 
-/* Si la tabla es más ancha, se agrega scroll horizontal */
 .modo-pdf .tablas-piezas {
   width: 100%;
   overflow-x: auto;
 }
 
 .modo-pdf .tablas-piezas table {
-  width: 100%; /* ocupar todo el espacio para que no se corte */
+  width: 100%;
   table-layout: auto;
   border-collapse: collapse;
 }
@@ -481,6 +473,5 @@ td input {
   font-size: 8pt;
   text-align: left;
 }
-
 
 
