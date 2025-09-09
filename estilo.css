@@ -162,7 +162,7 @@ h3 {
   vertical-align: middle;
 }
 
-.observaciones {
+.Observaciones {
   display: flex;              /* 👈 activa el modo fila */
   flex-direction: row;        /* 👈 asegura que sea horizontal */
   justify-content: space-between; /* 👈 deja espacio entre los 2 */
