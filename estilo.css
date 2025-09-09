@@ -167,10 +167,10 @@ h3 {
   flex-direction: row;        /* 👈 asegura que sea horizontal */
   justify-content: space-between; /* 👈 deja espacio entre los 2 */
   align-items: stretch;   /* 👈 alinea arriba (no centrado vertical) */
-  gap: 10px;                  /* 👈 separación entre los divs */
   width: 95%;
   max-width: 95%;
-  margin: 20px auto;          /* 👈 centrado como el resto */
+  margin: 20px auto;  
+  padding: 10px 40px; /* 👈 centrado como el resto */
 }
 
 
