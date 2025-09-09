@@ -181,6 +181,30 @@ h3 {
   flex-direction: column;
 }
 
+.notas h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.notas .nota {
+  width: 100%;
+  height: calc(7 * 1.5em);  /* 7 renglones de altura (1.5em = altura de línea) */
+  line-height: 1.5em;       /* altura de cada línea */
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 1.4em,
+    #ccc 1.5em
+  ); /* 🔹 líneas tipo cuaderno */
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 1em;
+  overflow: auto;
+}
+
 .canvas-section {
   flex: 1;              /* ocupa espacio proporcional */
   max-width: 60%;       /* que no sea gigante */
