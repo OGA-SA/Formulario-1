@@ -175,14 +175,15 @@ h3 {
 
 
 .notas {
-  width: 50%;
+ flex: 1;              /* ocupa el resto */
+  max-width: 40%;       /* más chica que la imagen */
+  display: flex;
+  flex-direction: column;
 }
 
 .canvas-section {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;              /* ocupa espacio proporcional */
+  max-width: 60%;       /* que no sea gigante */
 }
 
 .canvas {
