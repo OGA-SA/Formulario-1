@@ -176,7 +176,7 @@ h3 {
 
 .notas {
  flex: 1;              /* ocupa el resto */
-  max-width: 40%;       /* más chica que la imagen */
+  max-width: 60%;       /* más chica que la imagen */
   display: flex;
   flex-direction: column;
 }
