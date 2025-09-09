@@ -95,7 +95,7 @@ h3 {
   flex-direction: column;
   border: 1px solid #999;
   border-radius: 4px;
-  padding: 10px 40px;
+  padding: 10px;
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -103,12 +103,12 @@ h3 {
 
 .auto1,
 .auto2 {
-  display: flex;             /* coloca los labels en fila */
-  justify-content: space-between;
-  gap: 25px;                 /* 👉 espacio horizontal entre labels */
+  display: flex;
+  justify-content: center; /* 👉 centra todo */
+  gap: 45px;               /* 👉 separación entre labels */
   width: 100%;
 }
-
+ 
 .auto1 label,
 .auto2 label {
   display: flex;
