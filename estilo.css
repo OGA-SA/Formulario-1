@@ -105,8 +105,9 @@ h3 {
 .auto2 {
   display: flex;
   justify-content: center; /* 👉 centra todo */
-  gap: 105px;               /* 👉 separación entre labels */
+  gap: 55px;               /* 👉 separación entre labels */
   width: 100%;
+  flex-wrap: nowrap;
 }
  
 .auto1 label,
@@ -114,6 +115,7 @@ h3 {
   display: flex;
   gap: 10px; 
   padding: 15px;
+  flex: 0 0 auto;
 }
 
 .texto {
