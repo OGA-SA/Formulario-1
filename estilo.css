@@ -230,7 +230,7 @@ th, td {
 }
 
 td input {
-  width: auto;
+  width: 70%;
   border: none;
   padding: 5px;
   flex: 1; 
