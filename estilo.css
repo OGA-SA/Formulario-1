@@ -99,8 +99,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 15px; /* ✅ espacio entre auto1 y auto2 */
-} 
+ } 
 
 .auto1,
 .auto2 {
@@ -113,7 +112,7 @@ h3 {
 .auto1 label,
 .auto2 label {
   display: flex;
-  gap: 5px; 
+  gap: 10px; 
 }
 
 .texto {
