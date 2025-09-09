@@ -226,6 +226,7 @@ th, td {
   text-align: left;
   white-space: nowrap;  /* ✅ permite salto de línea si es necesario */
   word-wrap: break-word; /* ✅ asegura que el texto no se corte */
+  font-size: 0.85em;
 }
 
 td input {
