@@ -211,6 +211,7 @@ table {
   table-layout: auto;
   max-width: 100%;
   width: 100%;
+   white-space: nowrap;
 }
 
 #tablaPiezas1 td:nth-child(3),
