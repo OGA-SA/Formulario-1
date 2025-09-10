@@ -195,7 +195,7 @@ h3 {
 .notas .nota {
   width: 100%;
   flex: 1;               /* 🔹 ocupa toda la altura disponible */
-  line-height: 1em;       
+  line-height: 1.5em;       
   padding: 10px;
   resize: vertical;      
   border: 1px solid #999;
@@ -203,7 +203,7 @@ h3 {
   background-image: repeating-linear-gradient(
     to bottom,
     transparent,
-    transparent 1.4em,
+    transparent 1.45em,
     #ccc 1.5em
   );
   font-family: 'Comic Sans MS', sans-serif;
