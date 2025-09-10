@@ -403,10 +403,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const blob = await html2pdf().set(opt).from(element).output('blob');
 
       // 3) Enviar al backend
-      const nombreArchivo = `${siniestro1 || "Siniestro"}-${siniestro2 || ""}.pdf`;
+      const nombreArchivo = `${siniestro1 || "Siniestro1"}_${siniestro2 || "Siniestro2"}_Formulario_1.pdf`;
       const formData = new FormData();
       formData.append('pdf', blob, nombreArchivo);
       formData.append('filename', nombreArchivo);
+      formData.append("folder", "Formulario 1"); 
       
       const res = await fetch('https://extra-seguro-backend.onrender.com/upload', {
         method: 'POST',
