@@ -168,9 +168,9 @@ h3 {
   justify-content: center; 
   margin: 0 auto;
   align-items: stretch;  
-  width: 95%;
-  max-width: 95%;
-  
+  width: 90%;
+  max-width: 90%;
+  padding: 30px;
   gap: 20px;  
 }
 
