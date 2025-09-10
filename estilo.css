@@ -260,7 +260,7 @@ table th:first-child {
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
   flex: 1;
-  min-width: 100px;
+  min-width: 110px;
 }
 
 th, td {
