@@ -251,6 +251,10 @@ table {
   width: 95%;
    white-space: nowrap;
 }
+table td:first-child,
+table th:first-child {
+  white-space: normal;   /* ✅ permite múltiples líneas */
+ }
 
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
