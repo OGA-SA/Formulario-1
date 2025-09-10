@@ -246,7 +246,7 @@ h3 {
 table {
   border-collapse: collapse;
   margin: 0 auto;
-  table-layout: fixed;
+  table-layout: auto;
   max-width: 100%;
   width: 95%;
    white-space: nowrap;
@@ -275,7 +275,9 @@ td input {
   width: 70%;
   border: none;
   padding: 5px;
-  flex: 1; 
+  max-width: 100%; 
+  box-sizing: border-box;
+  
 }
 
 .tablas-piezas {
