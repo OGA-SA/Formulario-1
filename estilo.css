@@ -179,8 +179,8 @@ h3 {
  flex: 1;              /* ocupa el resto */
   max-width: 60%;       /* 👈 mismo tamaño que la imagen */
   display: flex;
-  flex-direction: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .notas h2 {
