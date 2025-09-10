@@ -163,21 +163,24 @@ h3 {
 }
 
 .Observaciones {
-  display: flex;              /* 👈 activa el modo fila */
-  flex-direction: row;        /* 👈 asegura que sea horizontal */
+  display: flex;              
+  flex-direction: row;
+  justify-content: center; 
   margin: 0 auto;
-  align-items: center;  
+  align-items: stretch;  
   width: 95%;
   max-width: 95%;
-  padding: 30px 20px; /* 👈 centrado como el resto */
+  padding: 30px 20px; 
+  gap: 20px;  
 }
 
 
 .notas {
  flex: 1;              /* ocupa el resto */
-  width: 80%;       /* más chica que la imagen */
+  max-width: 50%;       /* 👈 mismo tamaño que la imagen */
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .notas h2 {
@@ -206,7 +209,10 @@ h3 {
 
 .canvas-section {
   flex: 1;              /* ocupa espacio proporcional */
-  max-width: 50%;       /* que no sea gigante */
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;/* que no sea gigante */
 }
 
 .canvas-section canvas {
