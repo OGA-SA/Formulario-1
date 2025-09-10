@@ -169,13 +169,13 @@ h3 {
   align-items: center;  
   width: 95%;
   max-width: 95%;
-  padding: 30px 100px; /* 👈 centrado como el resto */
+  padding: 30px 20px; /* 👈 centrado como el resto */
 }
 
 
 .notas {
  flex: 1;              /* ocupa el resto */
-  max-width: 60%;       /* más chica que la imagen */
+  width: 70%;       /* más chica que la imagen */
   display: flex;
   flex-direction: column;
 }
