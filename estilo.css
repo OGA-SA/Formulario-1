@@ -166,7 +166,8 @@ h3 {
   display: flex;              /* 👈 activa el modo fila */
   flex-direction: row;        /* 👈 asegura que sea horizontal */
   justify-content: space-between; /* 👈 deja espacio entre los 2 */
-  align-items: stretch;   /* 👈 alinea arriba (no centrado vertical) */
+  margin: 0 auto;
+  align-items: center;  
   width: 95%;
   max-width: 95%;
   padding: 10px 40px; /* 👈 centrado como el resto */
