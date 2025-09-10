@@ -218,6 +218,7 @@ h3 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;/* que no sea gigante */
+  padding-top: 20px;
   }
 
 .canvas-section canvas {
