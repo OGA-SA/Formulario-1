@@ -169,7 +169,7 @@ h3 {
   align-items: center;  
   width: 95%;
   max-width: 95%;
-  padding: 30px 70px; /* 👈 centrado como el resto */
+  padding: 30px 100px; /* 👈 centrado como el resto */
 }
 
 
