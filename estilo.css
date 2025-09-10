@@ -176,7 +176,7 @@ h3 {
 
 .imagen-y-campos{
   width: 50%;
-  padding-top: 20px;
+  margin-top: 10px;
 }
 
 .notas {
@@ -218,8 +218,7 @@ h3 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;/* que no sea gigante */
-  padding-top: 20px;
-  }
+    }
 
 .canvas-section canvas {
   width: 100%;
