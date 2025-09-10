@@ -44,7 +44,7 @@
              </div>
               <div class="auto2">
              <label><span>VEHICULO</span> <input type="text" id="vehiculo" required /></label>
-             <label><span>MATRICULA</span> <input type="text" id="siniestro" required /></label>
+             <label><span>MATRICULA</span> <input type="text" id="matricula" required /></label>
             </div>
         </div>
       
@@ -349,22 +349,20 @@ document.addEventListener("DOMContentLoaded", () => {
   boton.addEventListener("click", async (e) => {
     e.preventDefault();
 
-    const taller = (document.getElementById("taller") || {}).value?.trim() || "";
-    const serieNumero = (document.getElementById("serieNumero") || {}).value?.trim() || "";
+    const carpeta = (document.getElementById("carpeta") || {}).value?.trim() || "";
+    const asegurado = (document.getElementById("asegurado") || {}).value?.trim() || "";
+    const vehiculo = (document.getElementById("vehiculo") || {}).value?.trim() || "";
+    const matricula = (document.getElementById("matricula") || {}).value?.trim() || "";
     const siniestro1 = (document.getElementById("siniestro1") || {}).value?.trim() || "";
     const siniestro2 = (document.getElementById("siniestro2") || {}).value?.trim() || "";
     const fechaInput = document.getElementById("fecha");
     const dificultadVisual = (document.getElementById("dificultadVisual") || {}).value?.trim() || "";
 
-    if (!taller || !serieNumero || !siniestro1 || !siniestro2 || !fechaInput || !fechaInput.value) {
+    if (!carpeta || !asegurado || !vehiculo || !matricula || !siniestro1 || !siniestro2 || !fechaInput.value) {
       alert("⚠️ Complete todos los campos antes de generar el PDF.");
       return;
     }
-    if (window.userHasDrawn && !dificultadVisual) {
-      alert("⚠️ Describa la dificultad visual asociada al dibujo.");
-      return;
-    }
-
+    
     // Mostrar fecha formateada en el DOM antes de generar el PDF
     const fechaParts = fechaInput.value.split("-");
     const fechaFormateada = `${fechaParts[2]}/${fechaParts[1]}/${fechaParts[0]}`;
