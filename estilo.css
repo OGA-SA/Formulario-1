@@ -145,6 +145,7 @@ h3 {
   padding: 10px;
   text-align: center;
 }
+
 .form-group input {
   border: 1px solid #999;
   border-radius: 4px;
@@ -272,7 +273,7 @@ th, td {
 }
 
 td input {
-  width: 70%;
+  width: 90%;
   border: none;
   padding: 5px;
   max-width: 100%; 
