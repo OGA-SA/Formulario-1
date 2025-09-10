@@ -169,7 +169,6 @@ h3 {
   align-items: stretch;   /* 👈 alinea arriba (no centrado vertical) */
   width: 95%;
   max-width: 95%;
-  margin: 20px auto;  
   padding: 10px 40px; /* 👈 centrado como el resto */
 }
 
