@@ -177,8 +177,7 @@ h3 {
 
 .imagen-y-campos{
   width: 50%;
-  margin-top: 50px;
-}
+  }
 
 .notas {
  flex: 1;              /* ocupa el resto */
@@ -219,6 +218,7 @@ h3 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;/* que no sea gigante */
+  margin-top: 20px;
     }
 
 .canvas-section canvas {
