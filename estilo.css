@@ -323,8 +323,9 @@ td input {
 
 .firma .clear-button {
   align-self: flex-end; /* coloca el botón a la derecha dentro del contenedor */
-  padding-right: 40px;
+  margin-right: 40px;
 }
+
 .boton {
   padding: 6px 12px;
   background-color: #005f9e;
