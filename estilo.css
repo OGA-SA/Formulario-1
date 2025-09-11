@@ -447,6 +447,9 @@ td input {
 
 .modo-pdf .columna-derecha .fecha label.Fecha {
   margin-left: 40px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .modo-pdf .fila-formulario {
