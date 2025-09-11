@@ -300,15 +300,14 @@ td input {
 
 .firma {
   display: flex;
-  justify-content: center; /* centra horizontal */
-  align-items: center;     /* centra vertical */
-  display: block;
+  flex-direction: column; /* apila canvas y botón verticalmente */
+  align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
 }
 
 .firma canvas{
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin: 0 auto;
+  display: block;
  }
 
 .firma-texto {
@@ -320,10 +319,9 @@ td input {
   color: #333;
 }
 .firma clear-button {
-  display: flex;
-  justify-content: flex-end; /* alinea el botón a la derecha */
-  width: 600px; /* mismo ancho que el canvas */
-  margin: 8px auto 0 auto; /* margen superior para separarlo del canvas y centrar el contenedor */
+  align-self: flex-end; /* mueve el botón al extremo derecho dentro del contenedor */
+  margin-top: 8px;      /* espacio entre canvas y botón */
+  padding: 6px 12px;
 }
 
 .boton {
