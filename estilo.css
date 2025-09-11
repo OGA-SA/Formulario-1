@@ -307,6 +307,8 @@ td input {
 .firma canvas{
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
  }
 
 .firma-texto {
@@ -316,6 +318,12 @@ td input {
   font-size: 14px;
   font-family: sans-serif;
   color: #333;
+}
+.firma clear-button {
+  display: flex;
+  justify-content: flex-end; /* alinea el botón a la derecha */
+  width: 600px; /* mismo ancho que el canvas */
+  margin: 8px auto 0 auto; /* margen superior para separarlo del canvas y centrar el contenedor */
 }
 
 .boton {
