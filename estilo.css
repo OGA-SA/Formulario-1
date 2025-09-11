@@ -85,6 +85,9 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
+label input {
+  text-align: center;
+}
 
 /* ✅ Centrar el div .auto y dar espacio entre auto1 y auto2 */
 .auto {
@@ -368,6 +371,6 @@ td input {
 }
 
 .modo-pdf h2{
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
