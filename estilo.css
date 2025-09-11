@@ -378,3 +378,41 @@ td input {
 .modo-pdf .texto{
   font-size: 0.9em;
 }
+.modo-pdf table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  word-break: break-word;
+  page-break-inside: auto;
+}
+
+.modo-pdf tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+
+.modo-pdf td, 
+.modo-pdf th {
+  padding: 4px;
+  font-size: 8pt;
+  white-space: normal;
+}
+
+.modo-pdf .tablas-piezas {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.modo-pdf .tablas-piezas table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.modo-pdf .tablas-piezas th,
+.modo-pdf .tablas-piezas td {
+  padding: 6px;
+  word-break: break-word;
+  font-size: 8pt;
+  text-align: left;
+}
