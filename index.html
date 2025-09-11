@@ -275,9 +275,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const ctx = canvas.getContext("2d");
   window.userHasDrawn = false;
 
-  // ✅ Limpiar canvas (solo fondo blanco, sin imagen)
+  // ✅ Inicializar fondo blanco (para que no quede transparente al exportar)
+  function fillWhiteBackground() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+  fillWhiteBackground();
+
+  // ✅ Limpiar canvas
   function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    fillWhiteBackground();
     window.userHasDrawn = false;
   }
   window.clearCanvas1 = clearCanvas;
@@ -289,14 +297,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const escalaX = canvas.width / rect.width;
     const escalaY = canvas.height / rect.height;
 
-    const x = evt.touches
-      ? (evt.touches[0].clientX - rect.left) * escalaX
-      : (evt.clientX - rect.left) * escalaX;
-
-    const y = evt.touches
-      ? (evt.touches[0].clientY - rect.top) * escalaY
-      : (evt.clientY - rect.top) * escalaY;
-
+    let x, y;
+    if (evt.touches && evt.touches.length > 0) {
+      x = (evt.touches[0].clientX - rect.left) * escalaX;
+      y = (evt.touches[0].clientY - rect.top) * escalaY;
+    } else {
+      x = (evt.clientX - rect.left) * escalaX;
+      y = (evt.clientY - rect.top) * escalaY;
+    }
     return { x, y };
   }
 
@@ -314,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pos = getPos(evt);
     ctx.lineWidth = 2;
     ctx.lineCap = "round";
-    ctx.strokeStyle = "black"; // ✅ Firma en negro
+    ctx.strokeStyle = "black"; // negro para la firma
     ctx.lineTo(pos.x, pos.y);
     ctx.stroke();
     ctx.beginPath();
@@ -328,20 +336,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.beginPath();
   }
 
-  // Eventos PC
+  // ✅ Eventos PC
   canvas.addEventListener("mousedown", startDraw);
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mouseup", endDraw);
   canvas.addEventListener("mouseleave", endDraw);
 
-  // Eventos móviles
+  // ✅ Eventos móviles (con {passive: false} para que detecte preventDefault)
   canvas.addEventListener("touchstart", startDraw, { passive: false });
   canvas.addEventListener("touchmove", draw, { passive: false });
-  canvas.addEventListener("touchend", endDraw);
-  canvas.addEventListener("touchcancel", endDraw);
+  canvas.addEventListener("touchend", endDraw, { passive: false });
+  canvas.addEventListener("touchcancel", endDraw, { passive: false });
 });
 </script>
-
 <!-- Autocompletar -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
