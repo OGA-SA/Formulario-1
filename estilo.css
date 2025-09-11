@@ -421,6 +421,15 @@ td input {
   font-size: 0.85em;
 }
 
+.modo-pdf .firma canvas{
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: block;
+   }
+
 .modo-pdf .firma {
-  margin: auto;
+  display: flex;
+  flex-direction: column; /* apila canvas y botón verticalmente */
+  align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
+  position: relative;
 }
