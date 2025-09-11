@@ -376,18 +376,6 @@ td input {
   font-size: 10pt;
   margin-left: 25px;
 }
- 
-.modo-pdf .contenedor-izquierda,
-.modo-pdf .columna-derecha {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-sizing: border-box;
-}
-
-.modo-pdf .fila-formulario label {
-  height: 25px;
-}
 
 .modo-pdf label {
   padding: 6px 10px;
@@ -399,20 +387,7 @@ td input {
   width: 100%;
   margin-bottom: -20px;
 }
-.modo-pdf .columna-derecha .fecha {
-  margin-left: 25px;
-}
 
-.modo-pdf .columna-derecha label {
-  margin-bottom: 0;
-  justify-content: flex-start;
-  text-align: center;
-  margin-right: 10px;
-  padding: 10px;
-  gap: 40px;
-  height: 25px;
-  align-items: center;
-}
 
 .modo-pdf label.siniestro {
   display: flex;
@@ -435,25 +410,6 @@ td input {
   min-width: 60px;
   max-width: 100%;
   box-sizing: border-box;
-}
-
-.modo-pdf .columna-derecha input {
-  padding: 2px 4px;
-}
-
-.modo-pdf .columna-derecha .stro label.visual {
-  margin-top: 50px;
-}
-
-.modo-pdf .columna-derecha .fecha label.Fecha {
-  margin-left: 40px;
-  border: 1px solid #999;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.modo-pdf .fila-formulario {
-  margin-left: 25px;
 }
 
 .modo-pdf .stro {
@@ -494,10 +450,6 @@ td input {
   width: 100%;
   box-sizing: border-box;
   vertical-align: middle;
-}
-
-.modo-pdf .columna-derecha .visual {
-  white-space: nowrap;
 }
 
 .modo-pdf canvas {
