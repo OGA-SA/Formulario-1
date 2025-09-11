@@ -377,6 +377,16 @@ td input {
   margin-left: 25px;
 }
 
+.dataform {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 95%;
+  border: none;
+}
+
 .modo-pdf label {
   padding: 6px 10px;
   box-sizing: border-box;
@@ -422,8 +432,12 @@ td input {
   width: 95%;
   display: flex;
   justify-content: center;
-  border: none;
-}
+  min-width: 100px;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  text-align: center;
+  }
 
 .modo-pdf .fecha {
   width: 60%;
