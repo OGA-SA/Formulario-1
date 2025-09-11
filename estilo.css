@@ -340,6 +340,7 @@ td input {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .boton:hover {
   background-color: #00416d;
 }
@@ -374,3 +375,6 @@ td input {
   font-size: 0.9em;
 }
 
+.modo-pdf .texto{
+  font-size: 0.9em;
+}
