@@ -252,6 +252,7 @@ table {
   width: 95%;
    white-space: nowrap;
 }
+
 table td:first-child,
 table th:first-child {
   white-space: normal;   /* ✅ permite múltiples líneas */
@@ -322,8 +323,8 @@ td input {
 }
 
 .firma .clear-button {
-  align-self: flex-end; /* coloca el botón a la derecha dentro del contenedor */
-  margin-right: 40px;
+  align-self: center; /* coloca el botón a la derecha dentro del contenedor */
+  
 }
 
 .boton {
