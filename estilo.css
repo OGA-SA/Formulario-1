@@ -302,12 +302,14 @@ td input {
   display: flex;
   flex-direction: column; /* apila canvas y botón verticalmente */
   align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
-}
+  position: relative;
+  }
 
 .firma canvas{
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: block;
+  margin-bottom: 8px; /* separa el canvas del botón */
  }
 
 .firma-texto {
@@ -319,6 +321,9 @@ td input {
   color: #333;
 }
 
+.firma .clear-button {
+  align-self: flex-end; /* coloca el botón a la derecha dentro del contenedor */
+}
 .boton {
   padding: 6px 12px;
   background-color: #005f9e;
