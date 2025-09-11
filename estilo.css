@@ -318,11 +318,6 @@ td input {
   font-family: sans-serif;
   color: #333;
 }
-.firma clear-button {
-  align-self: flex-end; /* mueve el botón al extremo derecho dentro del contenedor */
-  margin-top: 8px;      /* espacio entre canvas y botón */
-  padding: 6px 12px;
-}
 
 .boton {
   padding: 6px 12px;
