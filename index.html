@@ -104,7 +104,6 @@
       
         <div class="firma">
           <canvas id="canvas1" width="600" height="200"></canvas>
-          <span class="firma-texto">Firma:</span>
           <button class="clear-button" type="button" onclick="clearCanvas1()">Limpiar Dibujo</button>
         </div>
       
@@ -269,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
   <!-- Canvas para firma -->
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("canvas1");
   if (!canvas) return;
@@ -277,17 +276,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const ctx = canvas.getContext("2d");
   window.userHasDrawn = false;
 
-  // ✅ Inicializar fondo blanco (para que no quede transparente al exportar)
-  function fillWhiteBackground() {
+  // ✅ Función para dibujar el texto "Firma:" en la esquina inferior izquierda
+  function drawLabel() {
+    ctx.font = "16px sans-serif";
+    ctx.fillStyle = "#333";
+    ctx.fillText("Firma:", 10, canvas.height - 10);
+  }
+
+  // ✅ Inicializar canvas con fondo blanco + etiqueta "Firma:"
+  function initCanvas() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawLabel();
   }
-  fillWhiteBackground();
+  initCanvas();
 
-  // ✅ Limpiar canvas
+  // ✅ Limpiar canvas (cuando se presiona el botón)
   function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    fillWhiteBackground();
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawLabel(); // Redibuja "Firma:"
     window.userHasDrawn = false;
   }
   window.clearCanvas1 = clearCanvas;
@@ -344,13 +353,14 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.addEventListener("mouseup", endDraw);
   canvas.addEventListener("mouseleave", endDraw);
 
-  // ✅ Eventos móviles (con {passive: false} para que detecte preventDefault)
+  // ✅ Eventos móviles
   canvas.addEventListener("touchstart", startDraw, { passive: false });
   canvas.addEventListener("touchmove", draw, { passive: false });
   canvas.addEventListener("touchend", endDraw, { passive: false });
   canvas.addEventListener("touchcancel", endDraw, { passive: false });
 });
 </script>
+
 <!-- Autocompletar -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
