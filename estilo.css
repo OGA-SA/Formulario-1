@@ -323,7 +323,7 @@ td input {
 }
 
 .firma .clear-button {
-  align-self: center; /* coloca el botón a la derecha dentro del contenedor */
+  align-self: auto; 
   
 }
 
