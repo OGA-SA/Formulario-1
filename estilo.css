@@ -417,6 +417,10 @@ td input {
   text-align: left;
 }
 
-modo-pdf .noti h3{
+.modo-pdf .noti h3{
   font-size: 0.85em;
+}
+
+.modo-pdf .firma {
+  margin: auto;
 }
