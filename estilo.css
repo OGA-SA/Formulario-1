@@ -298,12 +298,16 @@ td input {
   border: none;
 }
 
+.firma {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
+  height: 100vh;           /* que ocupe toda la pantalla */
+}
 .firma canvas{
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-}
+ }
 
 
 .boton {
