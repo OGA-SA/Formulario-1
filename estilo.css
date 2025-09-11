@@ -323,10 +323,9 @@ td input {
 }
 
 .firma .clear-button {
-  justify-content: flex-start;
-  width: 50%
-  margin-left: -40px; 
-  margin-right: 80px;     
+  justify-content: center;
+  width: 10%
+   
 }
 
 .boton {
