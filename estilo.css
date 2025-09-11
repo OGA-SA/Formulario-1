@@ -313,8 +313,7 @@ td input {
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: block;
-  margin-bottom: 8px; /* separa el canvas del botón */
- }
+   }
 
 .firma-texto {
   position: absolute;
@@ -326,11 +325,12 @@ td input {
 }
 
 .firma .clear-button {
-  justify-content: center;
-  align-items: flex-end;
-  width: 10%
-   
-}
+  position: absolute;
+  bottom: 8px;   /* distancia desde abajo */
+  right: 8px;    /* distancia desde la derecha */
+  padding: 6px 12px;
+  width: auto;   /* ❌ sacamos el 10% */
+  }
 
 .boton {
   padding: 6px 12px;
