@@ -324,6 +324,7 @@ td input {
 
 .firma .clear-button {
   justify-content: center;
+  align-items: flex-end;
   width: 10%
    
 }
