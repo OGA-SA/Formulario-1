@@ -460,8 +460,10 @@ td input {
 }
 
 .modo-pdf .form-group {
-  width: 100%;
-  margin-left: 20px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  border: none;
 }
 
 .modo-pdf .fecha {
