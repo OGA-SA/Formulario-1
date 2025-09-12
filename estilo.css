@@ -319,6 +319,9 @@ td input {
   width: 50%;
   }
 
+.boton-firma button{
+  align-self: flex-end;
+}
 
 
 /* Texto sobre canvas */
