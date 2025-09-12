@@ -315,7 +315,7 @@ td input {
 
 .boton-firma{
   display: flex;
-  aling-items: flex-end;
+  justify-content: flex-end;
   width: 50%;
   }
 
