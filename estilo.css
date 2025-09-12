@@ -303,10 +303,10 @@ td input {
 }
 
 .firma {
-  display: flex;
   flex-direction: column; /* apila canvas y botón verticalmente */
   align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
   position: relative;
+  display: inline-block; /* se ajusta al tamaño del canvas */
   }
 
 .firma canvas{
@@ -325,10 +325,9 @@ td input {
 }
 
 .firma .clear-button {
-   align-self: center;   /* si querés que quede abajo a la derecha */
-  margin-top: 10px;     /* separa un poco del canvas */
-  margin-right: 0;      /* resetea el margen derecho */
-  width: auto;       /* para que quede alineado con el borde del canvas */
+  position: absolute;
+  bottom: -40px;   /* separa del canvas */
+  right: 0;        /* 👉 pegado al borde derecho del canvas */
   }
 
 .boton {
