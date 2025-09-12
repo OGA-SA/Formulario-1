@@ -324,11 +324,7 @@ td input {
   color: #333;
 }
 
-.firma .clear-button {
-  position: absolute;
-  bottom: -70px;   /* separa del canvas */
-  right: 0;        /* 👉 pegado al borde derecho del canvas */
-  }
+
 
 .boton {
   padding: 6px 12px;
