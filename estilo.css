@@ -319,6 +319,9 @@ td input {
   width: 50%;
   }
 
+.boton-firma button{
+  margin-left: 70px;
+}
 
 /* Texto sobre canvas */
 .firma-texto {
