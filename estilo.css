@@ -313,11 +313,15 @@ td input {
   margin: 0 auto;        /* asegura que quede centrado */
 }
 
-.firma .clear-button {
-  align-self: flex-end;  /* se alinea al borde derecho del canvas */
-  margin-top: 8px;
-  width: auto;
+.firma > * {
+  max-width: 100%;      /* evita que se estiren */
 }
+
+.firma .clear-button {
+  align-self: flex-end;   /* ahora se pega al borde del canvas */
+  margin-top: 8px;
+  padding: 6px 12px;
+  }
 
 /* Texto sobre canvas */
 .firma-texto {
