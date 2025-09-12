@@ -440,9 +440,7 @@ td input {
   align-items: center;
   position: relative;
 }
-@media print {
-  .boton,
-  .clear-button {
-    display: none !important;
-  }
+.modo-pdf .boton,
+.modo-pdf .clear-button {
+  display: none !important;
 }
