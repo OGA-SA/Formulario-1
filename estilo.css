@@ -326,7 +326,7 @@ td input {
 
 .firma .clear-button {
   position: absolute;
-  bottom: -40px;   /* separa del canvas */
+  bottom: -70px;   /* separa del canvas */
   right: 0;        /* 👉 pegado al borde derecho del canvas */
   }
 
