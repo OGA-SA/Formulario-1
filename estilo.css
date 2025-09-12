@@ -306,6 +306,7 @@ td input {
   flex-direction: column; /* apila canvas y botón verticalmente */
   align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
   position: relative;
+  left: 50px;
   display: inline-block; /* se ajusta al tamaño del canvas */
   }
 
