@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 html, body {
@@ -46,14 +45,14 @@ html, body {
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
- }
+}
 
 img.logo {
   display: block;
   width: 130px;
   height: auto;
-     }
- 
+}
+
 h2 {
   text-align: center;
   margin: 0 auto 20px auto;
@@ -62,7 +61,7 @@ h2 {
   width: 95%;
   max-width: 1200px;
   margin-top: 20px;
-  }
+}
 
 h2, .texto, .header, h3 {
   width: 95%;
@@ -74,7 +73,7 @@ h3 {
   text-align: center;
   border: 1px solid black;
   padding: 20px;
-  margin: 20px auto; /* ✅ centrado igual que auto */
+  margin: 20px auto;
 }
 
 .datos {
@@ -85,15 +84,16 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
+
 label input {
   text-align: center;
 }
 
-/* ✅ Centrar el div .auto y dar espacio entre auto1 y auto2 */
+/* Centrar el div .auto y dar espacio entre auto1 y auto2 */
 .auto {
   width: 95%;
   max-width: 1000px;
-  margin: 0 auto; /* ✅ centrado igual que h3 */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #999;
@@ -102,21 +102,21 @@ label input {
   justify-content: space-between;
   align-items: center;
   text-align: center;
- } 
+}
 
 .auto1,
 .auto2 {
   display: flex;
-  justify-content: center; /* 👉 centra todo */
-  gap: 55px;               /* 👉 separación entre labels */
+  justify-content: center;
+  gap: 55px;
   width: 100%;
   flex-wrap: nowrap;
 }
- 
+
 .auto1 label,
 .auto2 label {
   display: flex;
-  gap: 10px; 
+  gap: 10px;
   padding: 15px;
   flex: 0 0 auto;
 }
@@ -133,7 +133,6 @@ label input {
   gap: 10px;
   width: 95%;
 }
-  
 
 .form-group siniestro {
   width: 20%;
@@ -156,7 +155,7 @@ label input {
   font: inherit;
   width: auto;
   min-width: 10ch;
-  max-width: 100%; 
+  max-width: 100%;
   vertical-align: middle;
 }
 
@@ -167,28 +166,28 @@ label input {
 }
 
 .Observaciones {
-  display: flex;              
+  display: flex;
   flex-direction: row;
-  justify-content: center; 
+  justify-content: center;
   margin: 0 auto;
-  align-items: stretch;  
+  align-items: stretch;
   width: 90%;
   max-width: 90%;
   padding: 30px;
-  gap: 50px;  
+  gap: 50px;
 }
 
-.imagen-y-campos{
+.imagen-y-campos {
   width: 50%;
-  }
+}
 
 .notas {
- flex: 1;              /* ocupa el resto */
-  width: 70%;       /* 👈 mismo tamaño que la imagen */
+  flex: 1;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  }
+}
 
 .notas h2 {
   text-align: center;
@@ -197,10 +196,10 @@ label input {
 
 .notas .nota {
   width: 100%;
-  flex: 1;               /* 🔹 ocupa toda la altura disponible */
-  line-height: 1.5em;       
+  flex: 1;
+  line-height: 1.5em;
   padding: 10px;
-  resize: vertical;      
+  resize: vertical;
   border: 1px solid #999;
   border-radius: 4px;
   background-image: repeating-linear-gradient(
@@ -215,26 +214,24 @@ label input {
 }
 
 .canvas-section {
-  flex: 1;              /* ocupa espacio proporcional */
+  flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;/* que no sea gigante */
-    }
+  align-items: center;
+}
 
 .canvas-section canvas {
   width: 100%;
-  height: 100%;           /* 🔹 ocupa toda la altura del contenedor */
-  object-fit: contain;    /* 🔹 mantiene proporción */
+  height: 100%;
+  object-fit: contain;
   margin-top: 40px;
 }
 
-
+/* Botón limpiar */
 .clear-button {
   margin-top: 8px;
-  align-self: flex-end;
-  margin-right: 20px;
   padding: 6px 12px;
   background-color: #005f9e;
   color: white;
@@ -253,13 +250,13 @@ table {
   table-layout: auto;
   max-width: 100%;
   width: 95%;
-   white-space: nowrap;
+  white-space: nowrap;
 }
 
 table td:first-child,
 table th:first-child {
-  white-space: normal;   /* ✅ permite múltiples líneas */
- }
+  white-space: normal;
+}
 
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
@@ -271,8 +268,8 @@ th, td {
   border: 1px solid #000;
   padding: 5px;
   text-align: left;
-  white-space: nowrap;  /* ✅ permite salto de línea si es necesario */
-  word-wrap: break-word; /* ✅ asegura que el texto no se corte */
+  white-space: nowrap;
+  word-wrap: break-word;
   font-size: 0.85em;
 }
 
@@ -280,9 +277,8 @@ td input {
   width: 85%;
   border: none;
   padding: 5px;
-  max-width: 100%; 
+  max-width: 100%;
   box-sizing: border-box;
-  
 }
 
 .tablas-piezas {
@@ -296,26 +292,34 @@ td input {
   overflow-y: auto;
 }
 
-
 .noti h3 {
   width: 95%;
   border: none;
 }
 
+/* Firma */
 .firma {
-  flex-direction: column; /* apila canvas y botón verticalmente */
-  align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra el canvas */
   position: relative;
-  left: 50px;
-  display: inline-block; /* se ajusta al tamaño del canvas */
-  }
+  margin: 20px 0;
+}
 
-.firma canvas{
+.firma canvas {
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: block;
-   }
+  margin: 0 auto;        /* asegura que quede centrado */
+}
 
+.firma .clear-button {
+  align-self: flex-end;  /* se alinea al borde derecho del canvas */
+  margin-top: 8px;
+  width: auto;
+}
+
+/* Texto sobre canvas */
 .firma-texto {
   position: absolute;
   bottom: 5px;
@@ -325,9 +329,10 @@ td input {
   color: #333;
 }
 
-
-
+/* Botón generar PDF */
 .boton {
+  display: block;
+  margin: 20px auto;      /* centrado debajo */
   padding: 6px 12px;
   background-color: #005f9e;
   color: white;
@@ -366,11 +371,11 @@ td input {
   margin: 0;
 }
 
-.modo-pdf h2{
+.modo-pdf h2 {
   font-size: 0.9em;
 }
 
-.modo-pdf .texto{
+.modo-pdf .texto {
   font-size: 0.8em;
 }
 
@@ -387,7 +392,7 @@ td input {
   page-break-after: auto;
 }
 
-.modo-pdf td, 
+.modo-pdf td,
 .modo-pdf th {
   padding: 4px;
   font-size: 8pt;
@@ -413,19 +418,19 @@ td input {
   text-align: left;
 }
 
-.modo-pdf .noti h3{
+.modo-pdf .noti h3 {
   font-size: 0.85em;
 }
 
-.modo-pdf .firma canvas{
+.modo-pdf .firma canvas {
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: block;
-   }
+}
 
 .modo-pdf .firma {
   display: flex;
-  flex-direction: column; /* apila canvas y botón verticalmente */
-  align-items: center;    /* centra horizontalmente el canvas y el contenedor del botón */
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
