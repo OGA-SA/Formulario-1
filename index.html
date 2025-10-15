@@ -462,6 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const siniestro1 = (document.getElementById("siniestro1") || {}).value?.trim() || "";
     const siniestro2 = (document.getElementById("siniestro2") || {}).value?.trim() || "";
     const canvas1 = document.getElementById("canvas1");
+    const QUIEN = (document.getElementById("QUIEN") || {}).value?.trim() || "";
     const fechaInput = document.getElementById("fecha");
     const dificultadVisual = (document.getElementById("dificultadVisual") || {}).value?.trim() || "";
 
@@ -470,6 +471,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+     if (!QUIEN) {
+      alert("⚠️ Debe registrar el nombre del técnico que completó este formulario.");
+      return;
+    }
         function isCanvasBlank(canvas) {
             const blank = document.createElement('canvas');
             blank.width = canvas.width;
