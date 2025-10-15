@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const ctx = canvas.getContext("2d");
   let baseImageData = null;
-  window.userHasDrawn = false;
+  window.userHasDrawnParabrisas = false;
 
   const image = new Image();
   image.src = "parabrisa.png";
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-    window.userHasDrawn = false;
+    window.userHasDrawnParabrisas = false;
     baseImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   }
   window.clearCanvas = clearCanvas;
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.stroke();
     ctx.beginPath();
     ctx.moveTo(pos.x, pos.y);
-    window.userHasDrawn = true;
+    window.userHasDrawnParabrisas = true;
   }
 
   function endDraw(evt) {
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
-  window.userHasDrawn = false;
+  window.userHasDrawnFirma = false;
 
   // ✅ Función para dibujar el texto "Firma:" en la esquina inferior izquierda
   function drawLabel() {
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawLabel(); // Redibuja "Firma:"
-    window.userHasDrawn = false;
+    window.userHasDrawnFirma = false;
   }
   window.clearCanvas1 = clearCanvas;
 
@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.stroke();
     ctx.beginPath();
     ctx.moveTo(pos.x, pos.y);
-    window.userHasDrawn = true;
+    window.userHasDrawnFirma = true;
   }
 
   function endDraw(evt) {
@@ -473,10 +473,10 @@ document.addEventListener("DOMContentLoaded", () => {
             return canvas.toDataURL() === blank.toDataURL();
           }
     
-      if (isCanvasBlank(canvas1)) {
-        alert("⚠️ Debe solicitar al asegurado la firma del documento.");
-        return;
-        }
+        if (!window.userHasDrawnFirma) {
+          alert("⚠️ Debe solicitar al asegurado la firma del documento.");
+          return;
+            }
     
     // Mostrar fecha formateada en el DOM antes de generar el PDF
     const fechaParts = fechaInput.value.split("-");
