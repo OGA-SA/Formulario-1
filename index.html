@@ -465,6 +465,14 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("⚠️ Complete todos los campos antes de generar el PDF.");
       return;
     }
+
+        function isCanvasBlank(canvas) {
+            const blank = document.createElement('canvas');
+            blank.width = canvas.width;
+            blank.height = canvas.height;
+            return canvas.toDataURL() === blank.toDataURL();
+          }
+    
       if (isCanvasBlank(canvas1)) {
         alert("⚠️ Debe solicitar al asegurado la firma del documento.");
         return;
