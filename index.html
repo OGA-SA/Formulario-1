@@ -470,11 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("⚠️ Complete todos los campos antes de generar el PDF.");
       return;
     }
-
-     if (!QUIEN) {
-      alert("⚠️ Debe registrar el nombre del técnico que completó este formulario.");
-      return;
-    }
+    
         function isCanvasBlank(canvas) {
             const blank = document.createElement('canvas');
             blank.width = canvas.width;
@@ -486,6 +482,11 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("⚠️ Debe solicitar al asegurado la firma del documento.");
           return;
             }
+
+     if (!QUIEN) {
+      alert("⚠️ Debe registrar el nombre del técnico que completó este formulario.");
+      return;
+    }
     
     // Mostrar fecha formateada en el DOM antes de generar el PDF
     const fechaParts = fechaInput.value.split("-");
