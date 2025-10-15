@@ -474,3 +474,7 @@ td input {
 .modo-pdf .clear-button {
   display: none !important;
 }
+
+.modo-pdf .firma2{
+  font-size: 0.85em;
+}
