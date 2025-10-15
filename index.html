@@ -457,11 +457,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const matricula = (document.getElementById("matricula") || {}).value?.trim() || "";
     const siniestro1 = (document.getElementById("siniestro1") || {}).value?.trim() || "";
     const siniestro2 = (document.getElementById("siniestro2") || {}).value?.trim() || "";
+    const canvas1 = (document.getElementById("canvas1") || {}).value?.trim() || "";
     const fechaInput = document.getElementById("fecha");
     const dificultadVisual = (document.getElementById("dificultadVisual") || {}).value?.trim() || "";
 
     if (!carpeta || !asegurado || !vehiculo || !matricula || !siniestro1 || !siniestro2 || !fechaInput.value) {
       alert("⚠️ Complete todos los campos antes de generar el PDF.");
+      return;
+    }
+    if (!canvas1) {
+      alert("⚠️ Debe solicitar al asegurado la firma del documento.");
       return;
     }
     
