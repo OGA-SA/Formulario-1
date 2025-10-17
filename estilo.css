@@ -417,6 +417,12 @@ td input {
   margin-bottom: 5px;
 }
 
+.modo-pdf .auto{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+
 .modo-pdf table {
   width: 100%;
   border-collapse: collapse;
