@@ -482,7 +482,5 @@ td input {
 }
 .modo-pdf #QUIEN {
   text-transform: uppercase;  /* ejemplo: mostrar en mayúsculas */
-  border: none;
-  border-bottom: 1px solid black;
-  width: 150px;
+  
 }
