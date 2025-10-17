@@ -409,10 +409,12 @@ td input {
 
 .modo-pdf h2 {
   font-size: 0.9em;
+  margin-bottom: 5px;
 }
 
 .modo-pdf .texto {
   font-size: 0.8em;
+  margin-bottom: 5px;
 }
 
 .modo-pdf table {
@@ -421,6 +423,7 @@ td input {
   table-layout: auto;
   word-break: break-word;
   page-break-inside: auto;
+  margin-bottom: 5px;
 }
 
 .modo-pdf tr {
@@ -456,6 +459,8 @@ td input {
 
 .modo-pdf .noti h3 {
   font-size: 0.85em;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .modo-pdf .firma canvas {
