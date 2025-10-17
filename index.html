@@ -270,22 +270,34 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.addEventListener("touchcancel", endDraw);
 });
 </script>
-<script>
-  // ✅ Función para dibujar el texto "Firma:" en la esquina inferior izquierda
-  function drawLabel() {
-    ctx.font = "16px sans-serif";
-    ctx.fillStyle = "#333";
-    ctx.fillText("Firma:", 10, canvas.height - 10);
-  }
+  <script>  
+const canvas = document.getElementById("canvas2");
+  const ctx = canvas.getContext("2d");
 
-  // ✅ Inicializar canvas con fondo blanco + etiqueta "Firma:"
-  function initCanvas() {
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    drawLabel();
-  }
-  initCanvas();
-</script>  
+  // Texto "Firma:"
+  ctx.font = "20px Arial";
+  ctx.fillStyle = "#000";
+  ctx.textBaseline = "bottom";
+
+  const texto = "Firma:";
+  const margenIzquierdo = 20;
+  const margenInferior = 20;
+
+  // Posición del texto
+  ctx.fillText(texto, margenIzquierdo, canvas.height - margenInferior);
+
+  // Línea de firma
+  const anchoTexto = ctx.measureText(texto).width;
+  const inicioLinea = margenIzquierdo + anchoTexto + 10;
+  const yLinea = canvas.height - margenInferior - 2;
+
+  ctx.beginPath();
+  ctx.moveTo(inicioLinea, yLinea);
+  ctx.lineTo(canvas.width - margenIzquierdo, yLinea);
+  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = "#000";
+  ctx.stroke();
+</script>
  <!-- Autocompletar -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
