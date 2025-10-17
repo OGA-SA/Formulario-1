@@ -270,7 +270,22 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.addEventListener("touchcancel", endDraw);
 });
 </script>
+<script>
+  // ✅ Función para dibujar el texto "Firma:" en la esquina inferior izquierda
+  function drawLabel() {
+    ctx.font = "16px sans-serif";
+    ctx.fillStyle = "#333";
+    ctx.fillText("Firma:", 10, canvas.height - 10);
+  }
 
+  // ✅ Inicializar canvas con fondo blanco + etiqueta "Firma:"
+  function initCanvas() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawLabel();
+  }
+  initCanvas();
+</script>  
  <!-- Autocompletar -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
