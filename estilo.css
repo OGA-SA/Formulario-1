@@ -364,10 +364,7 @@ td input {
 }
  #QUIEN {
   text-transform: uppercase;  /* ejemplo: mostrar en mayúsculas */
-  border: none;
-  border-bottom: 1px solid black;
-  width: 150px;
-}
+ }
 /* Botón generar PDF */
 .boton {
   display: block;
