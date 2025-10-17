@@ -362,7 +362,12 @@ td input {
   text-align: left;
   font-size: 1em;
 }
-
+ #QUIEN {
+  text-transform: uppercase;  /* ejemplo: mostrar en mayúsculas */
+  border: none;
+  border-bottom: 1px solid black;
+  width: 150px;
+}
 /* Botón generar PDF */
 .boton {
   display: block;
@@ -477,4 +482,10 @@ td input {
 
 .modo-pdf .firma2{
   font-size: 0.85em;
+}
+.modo-pdf #QUIEN {
+  text-transform: uppercase;  /* ejemplo: mostrar en mayúsculas */
+  border: none;
+  border-bottom: 1px solid black;
+  width: 150px;
 }
