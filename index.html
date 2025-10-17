@@ -381,11 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return canvas.toDataURL() === blank.toDataURL();
           }
     
-        if (!window.userHasDrawnFirma) {
-          alert("⚠️ Debe solicitar al asegurado la firma del documento.");
-          return;
-            }
-
+        
      if (!QUIEN) {
       alert("⚠️ Debe registrar el nombre del técnico que completó este formulario.");
       return;
