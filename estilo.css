@@ -409,17 +409,17 @@ td input {
 
 .modo-pdf h2 {
   font-size: 0.9em;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .modo-pdf .texto {
   font-size: 0.8em;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .modo-pdf .auto{
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 
@@ -429,7 +429,7 @@ td input {
   table-layout: auto;
   word-break: break-word;
   page-break-inside: auto;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-size: 0.85em;
 }
 
@@ -466,8 +466,8 @@ td input {
 
 .modo-pdf .noti h3 {
   font-size: 0.85em;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 .modo-pdf .firma canvas {
