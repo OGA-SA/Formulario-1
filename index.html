@@ -106,10 +106,7 @@
           <canvas id="canvas1" width="400" height="120"></canvas>
              </div>
       
-        <div class="boton-firma">
-           <button class="clear-button" type="button" onclick="clearCanvas1()">Limpiar Firma</button>
-        </div>
-
+        
       <div class="firma2">
             <label><span>POR CARS:</span> <input type="text" id="QUIEN" required /></label>
                   </div>
@@ -274,101 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-  <!-- Canvas para firma -->
- <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("canvas1");
-  if (!canvas) return;
-
-  const ctx = canvas.getContext("2d");
-  window.userHasDrawnFirma = false;
-
-  // ✅ Función para dibujar el texto "Firma:" en la esquina inferior izquierda
-  function drawLabel() {
-    ctx.font = "16px sans-serif";
-    ctx.fillStyle = "#333";
-    ctx.fillText("Firma:", 10, canvas.height - 10);
-  }
-
-  // ✅ Inicializar canvas con fondo blanco + etiqueta "Firma:"
-  function initCanvas() {
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    drawLabel();
-  }
-  initCanvas();
-
-  // ✅ Limpiar canvas (cuando se presiona el botón)
-  function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    drawLabel(); // Redibuja "Firma:"
-    window.userHasDrawnFirma = false;
-  }
-  window.clearCanvas1 = clearCanvas;
-
-  let drawing = false;
-
-  function getPos(evt) {
-    const rect = canvas.getBoundingClientRect();
-    const escalaX = canvas.width / rect.width;
-    const escalaY = canvas.height / rect.height;
-
-    let x, y;
-    if (evt.touches && evt.touches.length > 0) {
-      x = (evt.touches[0].clientX - rect.left) * escalaX;
-      y = (evt.touches[0].clientY - rect.top) * escalaY;
-    } else {
-      x = (evt.clientX - rect.left) * escalaX;
-      y = (evt.clientY - rect.top) * escalaY;
-    }
-    return { x, y };
-  }
-
-  function startDraw(evt) {
-    evt.preventDefault();
-    drawing = true;
-    const pos = getPos(evt);
-    ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-  }
-
-  function draw(evt) {
-    if (!drawing) return;
-    evt.preventDefault();
-    const pos = getPos(evt);
-    ctx.lineWidth = 2;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "black"; // negro para la firma
-    ctx.lineTo(pos.x, pos.y);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-    window.userHasDrawnFirma = true;
-  }
-
-  function endDraw(evt) {
-    evt.preventDefault();
-    drawing = false;
-    ctx.beginPath();
-  }
-
-  // ✅ Eventos PC
-  canvas.addEventListener("mousedown", startDraw);
-  canvas.addEventListener("mousemove", draw);
-  canvas.addEventListener("mouseup", endDraw);
-  canvas.addEventListener("mouseleave", endDraw);
-
-  // ✅ Eventos móviles
-  canvas.addEventListener("touchstart", startDraw, { passive: false });
-  canvas.addEventListener("touchmove", draw, { passive: false });
-  canvas.addEventListener("touchend", endDraw, { passive: false });
-  canvas.addEventListener("touchcancel", endDraw, { passive: false });
-});
-</script>
-
-<!-- Autocompletar -->
+ <!-- Autocompletar -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const sugerencias = [
