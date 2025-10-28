@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fechaInput = document.getElementById("fecha");
     const dificultadVisual = (document.getElementById("dificultadVisual") || {}).value?.trim() || "";
 
-    if (!carpeta || !asegurado || !vehiculo || !matricula || !siniestro1 || !siniestro2 || !fechaInput.value) {
+    if (!vehiculo || !matricula || !siniestro1 || !siniestro2 || !fechaInput.value) {
       alert("⚠️ Complete todos los campos antes de generar el PDF.");
       return;
     }
